@@ -1,0 +1,9 @@
+*.pyc
+*~
+__pycache__
+myvenv
+db.sqlite3
+/static
+.DS_Store
+myproject/sensitive_email_data.py
+myproject/secret_keys.py

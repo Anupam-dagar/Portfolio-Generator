@@ -1,0 +1,60 @@
+/* Custom Stylesheet */
+/**
+ * Use this file to override Materialize files so you can update
+ * the core Materialize files in the future
+ *
+ * Made By MaterializeCSS.com
+ */
+ @import url(https://fonts.googleapis.com/css?family=Montserrat);
+ html{
+ 	font-family: 'Montserrat';
+ }
+ .icon-block {
+ 	padding: 0 15px;
+ }
+ .icon-block .material-icons {
+ 	font-size: inherit;
+ }
+ .fs-title{
+ 	font-size: 1.5em;
+ 	text-transform: uppercase;
+ 	color: #2C3E50;
+ 	margin-bottom: 10px;
+ 	letter-spacing: 2px;
+ 	font-weight: bold;
+ }
+ .fs-subtitle{
+ 	font-weight: normal;
+ 	font-size: 1em;
+ 	color: #666;
+ 	margin-bottom: 20px;
+ }
+ .action-button{
+ 	width: 8em;
+    background: #ee0979;
+    font-weight: bold;
+    color: white;
+    border: 0 none;
+    border-radius: 25px;
+    padding-left: 5px;
+    padding-right: 10px;
+ }
+ 
+ #msform {
+    position: relative;
+}
+ #msform fieldset {
+ 	background: white;
+    box-shadow: 0 0 3em 0.4px rgba(0, 0, 0, 0.4);
+    padding: 20px 15%;
+    min-width: 1000px;
+    margin-top: -10%;
+    margin-left: -50%;
+ 	/*stacking fieldsets above each other*/
+ 	position: relative;
+ }
+ /*Hide all except first fieldset*/
+ #msform fieldset:not(:first-of-type) {
+ 	display: none;
+ }
+ 

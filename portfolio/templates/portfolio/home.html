@@ -1,0 +1,190 @@
+{% extends 'portfolio/base.html' %}
+{% load staticfiles %}
+{% block title %}HoxNox-Home{% endblock %}
+{% block extend_head %}
+    
+    
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="{% static 'css/home.css' %}" rel="stylesheet">
+{% endblock %}
+{%block content %}
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                    Menu <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand page-scroll" href="#page-top">
+                    <i class="fa fa-play-circle"></i> <span class="light">Hox</span> Nox
+                </a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+                <ul class="nav navbar-nav">
+                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#get_started">Get Started</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#about">About</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#download">Source Code</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#contact">Contact</a>
+                    </li>
+                    
+                    {% if user.is_authenticated %}
+                        
+                        <li>
+                        <a class="page-scroll" href="/">{{request.user}}</a>
+                        </li>
+                        <li>
+                        <a class="page-scroll" href="{% url 'auth_logout' %}?next=/">Logout</a>
+                        </li>
+                        
+                    {% else %}
+                    
+                        <li>
+                            <a class="page-scroll" href="{% url 'auth_login' %}">Login</a>
+                        </li>
+                        <li>
+                            <a class="page-scroll" href="{% url 'registration_register' %}">Signup</a>
+                        </li>
+                        
+                    {% endif %}
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Intro Header -->
+    <header class="intro">
+        <div class="intro-body">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <h1 class="brand-heading">HoxNox</h1>
+{% if user.is_authenticated %}
+<p class="intro-text">Welcome {{request.user}}, start by entering your details.
+                            <br></p>
+                            <a href="{% url 'Portfolio_detail' %}"><button class="btn btn-danger btn-lg">Enter Details</button></a>
+{% else %}
+                        <p class="intro-text">A free, simple to use, quick portfolio generator.
+                            <br></p>
+                            <p class="intro-text">Get Started Now<br>
+                        <a href="#get_started" class="btn btn-circle page-scroll">
+                            <i class="fa fa-angle-double-down animated"></i>
+                        </a></p>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- get started section-->
+<div id="setbg">
+    <section id="get_started" class="container content-section text-center">
+        <div class="row" >
+        <h1>To get started</h1>
+            <div class="col-lg-4 ">
+                <h2>Already an User</h2>
+                <a href="{% url 'auth_login' %}" class="btn btn-default btn-lg" style="width: 10em;"><i class="fa fa-sign-in fa-fw"></i> <span class="network-name">Login</span></a>
+                </div>
+            <div class="col-lg-4 ">
+            <br><br>
+                <h2>OR</h2>
+            </div>    
+            <div class="col-lg-4 ">
+                <h2>New to hoxNox</h2>
+                <a href="{% url 'registration_register' %}" class="btn btn-default btn-lg" style="width: 10em;"><i class="fa fa-pencil-square-o fa-fw"></i> <span class="network-name">Signup</span></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="container content-section text-center">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                <h2>About HoxNox</h2>
+                <p>HoxNox is a simple portfolio generator created by <a href="http://anupamdagar.me/">Anupam Dagar</a>. Just enter the required deatils and get you portfolio generated.The project is open source, pull requests are welcome. <a href="#">View Source</a></p>
+                <p>HoxNox features minimal and flat design.There is no place for spam and all it takes is 5 minutes to get your portfolio ready.
+                <p>HoxNox includes full HTML, CSS, and custom JavaScript files along with LESS files for easy customization and Python's Django Framework as it's backend for fast and secure experience.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Download Section -->
+    <section id="download" class="content-section text-center">
+ </div>
+        <div class="download-section">
+            <div class="container">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <h2>Want to know how it's made?</h2>
+                    <p>Check out the source at</p>
+                    <a href="http://startbootstrap.com/template-overviews/grayscale/" class="btn btn-default btn-lg">View Source at GitHub</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="container content-section text-center">
+        <div class="row" style="margin-top: -14%;">
+            <div class="col-lg-9 col-lg-offset-2">
+                <h2>Contact ME</h2>
+                <p>Want to provide some feedback on HoxNox, give suggestions for new features, or to just say hello!</p>
+                <p>Email me at <a href="mailto:dagaranupam@gmail.com">dagaranupam@gmail.com</a>
+                </p>
+                <ul class="list-inline banner-social-buttons">
+                    <li>
+                        <a href="#" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/Anupam-dagar" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
+                    </li>
+                    <li>
+                        <a href="https://www,facebook.com/invincible.anupam" class="btn btn-default btn-lg"><i class="fa fa-facebook fa-fw"></i> <span class="network-name">Facebook</span></a>
+                    </li>
+                    <li>
+                        <a href="https://www,facebook.com/invincible.anupam" class="btn btn-default btn-lg"><i class="fa fa-linkedin fa-fw"></i> <span class="network-name">LinkedIn</span></a>
+                    </li>
+                    <li>
+                        <a href="http://anupamdagar.me/" class="btn btn-default btn-lg"><i class="fa fa-home fa-fw"></i> <span class="network-name">Website</span></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container text-center">
+            <p>Created with <i class="fa fa-heart-o" aria-hidden="true"></i> by Anupam Dagar</p>
+        </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- Plugin JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+
+    <!-- Theme JavaScript -->
+    <script src="{% static 'js/home.js' %}"></script>
+
+</body>
+{% endblock %}

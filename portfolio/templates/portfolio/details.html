@@ -1,0 +1,182 @@
+{% extends 'portfolio/base.html' %}
+{% load widget_tweaks %}
+{% load staticfiles %}
+{% block title %}Portfolio-Enter Details{% endblock %}
+{% block extend_head %}
+<!-- CSS  -->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="{% static 'css/materialize.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
+<link href="{% static 'css/form.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
+{% endblock %}
+{% block content %}
+<style type="text/css">
+  body{
+    background: url({% static 'img/home3.png' %});
+  }
+</style>
+
+<div class="container">
+  <div class="section">
+
+    <!--   Icon Section   -->
+    <div class="row">
+      <div class="col s12 m6 offset-m3">
+        <div class="icon-block">
+          <h2 class="center light-blue-text"><i class="material-icons">description</i></h2>
+          {{form.errors}}
+          <div class="row">
+            <div class="col s12 m12">
+              <div class="card white z-depth-5" style="padding-left: 2em;padding-right: 2em; height: 0;">
+                <div class="card-content black-text">
+
+
+                  <div class="row">
+                    <!-- form -->
+                    <form class="col s12" id="msform" method="POST">
+                      {% csrf_token %}
+                      <!-- Personal Details -->
+                      <fieldset style="border: none;">
+                        <h2 class="center fs-title" >Personal Details</h2>
+                        <h3 class="center fs-subtitle">Tell us about yourself</h3>
+                        <div class="row">
+                          <div class="input-field col s12 ">
+                            {% render_field form.first_name class="validate" data-length="50" %}
+                            <label for="first_name" data-wrong="wrong" data-success="OK">First Name</label>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="input-field col s12">
+                            {% render_field form.last_name class="validate" data-length="50" %}
+                            <label for="last_name">Last Name</label>
+                          </div>
+                        </div>
+
+                        <div class="row">
+                          <div class="input-field col s12">
+                            {% render_field form.date_of_birth class="validate" data-length="10" %}
+                            <label for="password" data-wrong="wrong" data-success="OK">Date of Birth</label>
+                          </div>
+                        </div>
+                            <a class="next action-button waves-effect waves-light btn" style="left: 40%;">Next</a>
+                            
+
+                          </fieldset>
+                          <!-- Contact Details -->
+                          <fieldset style="border: none;">
+                            <h2 class="center fs-title" >Contact Details</h2>
+                            <h3 class="center fs-subtitle">How to get in touch with you?</h3>
+                            <div class="row">
+                              <div class="input-field col s12 ">
+                                {% render_field form.email_address class="validate" %}
+                                <label for="email">Email</label>
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="input-field col s12">
+                                {% render_field form.phone_number class="validate" data-length="10" %}
+                                <label for="Phone number">Phone Number</label>
+                              </div>
+                            </div>
+                            <a class="previous action-button waves-effect waves-light btn" style="left: 36%;">Previous</a>
+                            <a class="next action-button waves-effect waves-light btn" style="left: 36%;">Next</a>
+
+
+
+
+                          </fieldset>
+                          <!-- BIO -->
+                          <fieldset style="border: none;">
+                            <h2 class="center fs-title" >Contact Details</h2>
+                            <h3 class="center fs-subtitle">How to get in touch with you?</h3>
+                            <div class="row">
+                              <div class="input-field col s12 ">
+                                {% render_field form.small_bio class="validate" %}
+                                <label for="smbio">Small Bio</label>
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="input-field col s12">
+                              {% render_field form.main_bio class="validate materialize-textarea" data-length="600" %}
+
+                                <label for="textarea1">Textarea</label>
+                              </div>
+                            </div>
+
+                            <a class="previous action-button waves-effect waves-light btn" style="left: 36%;">Previous</a>
+                            <a class="next action-button waves-effect waves-light btn" style="left: 36%;">Next</a>
+                          </fieldset>
+                          <fieldset style="border: none;">
+                            <h2 class="center fs-title" >Contact Details</h2>
+                            <h3 class="center fs-subtitle">How to get in touch with you?</h3>
+                            <div class="row">
+                              <div class="input-field col s12 ">
+                                {% render_field form.skill1 class="validate" %}
+                                <label for="skill">Skill1</label>
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="input-field col s12 ">
+                                {% render_field form.skill2 class="validate" %}
+                                <label for="skill">Skill2</label>
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="input-field col s12 ">
+                                {% render_field form.skill3 class="validate" %}
+                                <label for="skill">Skill3</label>
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="input-field col s12 ">
+                                {% render_field form.skill4 class="validate" %}
+                                <label for="skill">Skill4</label>
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="input-field col s12 ">
+                                {% render_field form.skill5 class="validate" %}
+                                <label for="skill">Skill5</label>
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="input-field col s12 ">
+                                {% render_field form.skill6 class="validate" %}
+                                <label for="skill">Skill6</label>
+                              </div>
+                            </div>
+
+                            
+
+                            <a class="previous action-button waves-effect waves-light btn" style="left: 36%;">Previous</a>
+
+                            <button class="btn waves-effect waves-light" type="submit" name="action" style="left: 36%;"><i class="material-icons right">send</i>Submit
+                              
+                            </button>
+
+                          </fieldset>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br><br>
+      </div>
+    </div>
+
+
+
+
+    <!--  Scripts-->
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+    <script src="{% static 'js/materialize.js' %}"></script>
+    <script src="{% static 'js/init.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/form.js' %}"></script>
+    <script type="text/javascript">
+      $('.button-collapse').sideNav();
+    </script>
+{% endblock %}
