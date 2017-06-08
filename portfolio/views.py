@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 from django.shortcuts import redirect, render, get_object_or_404
+from django.http import Http404
 from .forms import PortfolioForm
 from .models import Portfolio
 import datetime
@@ -23,6 +24,8 @@ def Portfolio_detail(request):
 def Portfolio_display(request, pk):
 	if request.user.is_authenticated():
 		detail = get_object_or_404(Portfolio, pk=pk)
+		if not request.user.username==detail.user:
+			raise Http404
 		return render(request, 'portfolio/display.html', {'detail':detail})
 	else:
 		return render(request,'portfolio/home.html',{})		
