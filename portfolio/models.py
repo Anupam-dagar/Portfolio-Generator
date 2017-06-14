@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
-from django.db import models, IntegrityError
+from django.db import models
 from datetime import date
-from django.contrib.auth.models import User
+from django.conf import settings
 class Portfolio(models.Model):
-	user = models.ForeignKey(User)
+	user = models.ForeignKey(settings.AUTH_USER_MODEL, default=1)
 	first_name = models.CharField(max_length=200)
 	last_name = models.CharField(max_length=200, blank=True)
 	date_of_birth = models.DateField()
