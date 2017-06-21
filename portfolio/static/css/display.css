@@ -2599,7 +2599,7 @@
 /* One */
 
 	#one:before {
-		background-image: url("../img/banner.jpg");
+		background-image: url("../img/Hoxnox_banner.png");
 		background-position: top right;
 		background-repeat: no-repeat;
 		background-size: cover;
@@ -3087,3 +3087,230 @@
 			}
 
 	}
+.icon--vimeo::before {
+  content: "";
+}
+
+.social__icon--vimeo {
+  background-color: #4dbfe3;
+}
+.social__icon--vimeo:hover {
+  background-color: #41a2c1;
+}
+
+.icon--twitter::before {
+  content: "";
+}
+
+.social__icon--twitter {
+  background-color: #32b9e7;
+}
+.social__icon--twitter:hover {
+  background-color: #2b9dc4;
+}
+
+.icon--facebook::before {
+  content: "";
+}
+
+.social__icon--facebook {
+  background-color: #4b70ab;
+}
+.social__icon--facebook:hover {
+  background-color: #405f91;
+}
+
+.icon--googleplus::before {
+  content: "";
+}
+
+.social__icon--googleplus {
+  background-color: #fa5432;
+}
+.social__icon--googleplus:hover {
+  background-color: #d5472b;
+}
+
+.icon--pintrest::before {
+  content: "";
+}
+
+.social__icon--pintrest {
+  background-color: #d63533;
+}
+.social__icon--pintrest:hover {
+  background-color: #b62d2b;
+}
+
+.icon--linkedin::before {
+  content: "";
+}
+
+.social__icon--linkedin {
+  background-color: #0087be;
+}
+.social__icon--linkedin:hover {
+  background-color: #0073a2;
+}
+
+.icon--dribble::before {
+  content: "";
+}
+
+.social__icon--dribble {
+  background-color: #fc89b1;
+}
+.social__icon--dribble:hover {
+  background-color: #d67496;
+}
+
+.icon--stumbleupon::before {
+  content: "";
+}
+
+.social__icon--stumbleupon {
+  background-color: #f15d29;
+}
+.social__icon--stumbleupon:hover {
+  background-color: #cd4f23;
+}
+
+.icon--lastfm::before {
+  content: "";
+}
+
+.social__icon--lastfm {
+  background-color: #e42124;
+}
+.social__icon--lastfm:hover {
+  background-color: #c21c1f;
+}
+
+.icon--instagram::before {
+  content: "";
+}
+
+.social__icon--instagram {
+  background-color: #6291b2;
+}
+.social__icon--instagram:hover {
+  background-color: #537b97;
+}
+
+.icon--dropbox::before {
+  content: "";
+}
+
+.social__icon--dropbox {
+  background-color: #167ab6;
+}
+.social__icon--dropbox:hover {
+  background-color: #13689b;
+}
+
+.icon--soundcloud::before {
+  content: "";
+}
+
+.social__icon--soundcloud {
+  background-color: #fb740b;
+}
+.social__icon--soundcloud:hover {
+  background-color: #d56309;
+}
+
+.icon--behance::before {
+  content: "";
+}
+
+.social__icon--behance {
+  background-color: #33abdb;
+}
+.social__icon--behance:hover {
+  background-color: #2b91ba;
+}
+
+.icon--skype::before {
+  content: "";
+}
+
+.social__icon--skype {
+  background-color: #00AFF0;
+}
+.social__icon--skype:hover {
+  background-color: #0095cc;
+}
+
+.icon--github::before {
+  content: "";
+}
+
+.social__icon--github {
+  background-color: #333333;
+}
+.social__icon--github:hover {
+  background-color: #2b2b2b;
+}
+
+.icon--flickr::before {
+  content: "";
+}
+
+.social__icon--flickr {
+  background-color: #333333;
+}
+.social__icon--flickr:hover {
+  background-color: #2b2b2b;
+}
+
+.icon--rss::before {
+  content: "";
+}
+
+.social__icon--rss {
+  background-color: #FB7629;
+}
+.social__icon--rss:hover {
+  background-color: #d56423;
+}
+
+.social__item {
+  display: inline-block;
+  margin-right: 0.1em;
+}
+
+.icon, [class^="icon--"] {
+  font-family: 'FontAwesome';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.social__icon, [class^="social__icon"] {
+  font-size: 1.4em;
+  color: white;
+  text-decoration: none;
+  border-radius: 100%;
+  width: 2.2em;
+  height: 2.2em;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.social__container {
+  padding: 1em;
+  font-size: 1em;
+}	

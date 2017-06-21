@@ -131,16 +131,4 @@
 </div>
 {% endif %}
 {% endif %}
-<!--<div class="container">
-<form method="post" action=".">
-  {% csrf_token %} 
-  {{ form.as_p }}
-
-  <input class="btn btn-primary" type="submit" value="{% trans 'Log in' %}" />
-  <input class="form-control" type="hidden" name="next" value="{{ next }}" />
-</form>
-
-<p>{% trans "Forgot password" %}? <a href="{% url 'auth_password_reset' %}">{% trans "Reset it" %}</a>!</p>
-<p>{% trans "Not member" %}? <a href="{% url 'registration_register' %}">{% trans "Register" %}</a>!</p>
-</div> -->
 {% endblock %}

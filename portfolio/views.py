@@ -10,10 +10,10 @@ from registration.backends.hmac.views import RegistrationView
 def Portfolio_detail(request):
 	if request.user.is_authenticated():
 		if request.method == "POST":
-			detail = Portfolio(request.user)
 			form = PortfolioForm(request.POST)
 			if form.is_valid():
 				detail = form.save(commit=False)
+				detail.user = request.user
 				detail.save()
 				return redirect('Portfolio_display', pk=detail.pk)
 		else:	
@@ -24,9 +24,10 @@ def Portfolio_detail(request):
 def Portfolio_display(request, pk):
 	if request.user.is_authenticated():
 		detail = get_object_or_404(Portfolio, pk=pk)
-		if not request.user.username==detail.user:
+		if request.user==detail.user:
+			return render(request, 'portfolio/display.html', {'detail':detail})
+		else:
 			raise Http404
-		return render(request, 'portfolio/display.html', {'detail':detail})
 	else:
 		return render(request,'portfolio/home.html',{})		
 def home(request):

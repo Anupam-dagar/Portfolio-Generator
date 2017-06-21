@@ -23,6 +23,9 @@
       <div class="col s12 m6 offset-m3">
         <div class="icon-block">
           <h2 class="center light-blue-text"><i class="material-icons">description</i></h2>
+
+  
+        
           {{form.errors}}
           <div class="row">
             <div class="col s12 m12">
@@ -31,6 +34,7 @@
 
 
                   <div class="row">
+
                     <!-- form -->
                     <form class="col s12" id="msform" method="POST">
                       {% csrf_token %}
@@ -38,6 +42,7 @@
                       <fieldset style="border: none;">
                         <h2 class="center fs-title" >Personal Details</h2>
                         <h3 class="center fs-subtitle">Tell us about yourself</h3>
+                        <h4 class="center fs-subtitle">Step 1/6</h4>
                         <div class="row">
                           <div class="input-field col s12 ">
                             {% render_field form.first_name class="validate" data-length="50" %}
@@ -65,16 +70,17 @@
                           <fieldset style="border: none;">
                             <h2 class="center fs-title" >Contact Details</h2>
                             <h3 class="center fs-subtitle">How to get in touch with you?</h3>
+                            <h4 class="center fs-subtitle">Step 2/6</h4>
                             <div class="row">
                               <div class="input-field col s12 ">
-                                {% render_field form.email_address class="validate" %}
-                                <label for="email">Email</label>
+                                {% render_field form.email_address class="validate" type="email" %}
+                                <label for="email" data-wrong="wrong" data-success="OK">Email</label>
                               </div>
                             </div>
                             <div class="row">
                               <div class="input-field col s12">
                                 {% render_field form.phone_number class="validate" data-length="10" %}
-                                <label for="Phone number">Phone Number</label>
+                                <label for="Phone number" data-wrong="wrong" data-success="OK">Phone Number</label>
                               </div>
                             </div>
                             <a class="previous action-button waves-effect waves-light btn" style="left: 36%;">Previous</a>
@@ -86,8 +92,9 @@
                           </fieldset>
                           <!-- BIO -->
                           <fieldset style="border: none;">
-                            <h2 class="center fs-title" >Contact Details</h2>
-                            <h3 class="center fs-subtitle">How to get in touch with you?</h3>
+                            <h2 class="center fs-title" >Your Bio</h2>
+                            <h3 class="center fs-subtitle">Time to know about you</h3>
+                            <h4 class="center fs-subtitle">Step 3/6</h4>
                             <div class="row">
                               <div class="input-field col s12 ">
                                 {% render_field form.small_bio class="validate" %}
@@ -106,8 +113,9 @@
                             <a class="next action-button waves-effect waves-light btn" style="left: 36%;">Next</a>
                           </fieldset>
                           <fieldset style="border: none;">
-                            <h2 class="center fs-title" >Contact Details</h2>
-                            <h3 class="center fs-subtitle">How to get in touch with you?</h3>
+                            <h2 class="center fs-title" >Skills</h2>
+                            <h3 class="center fs-subtitle">Your area of expertise</h3>
+                            <h4 class="center fs-subtitle">Step 4/6</h4>
                             <div class="row">
                               <div class="input-field col s12 ">
                                 {% render_field form.skill1 class="validate" %}
@@ -148,10 +156,119 @@
                             
 
                             <a class="previous action-button waves-effect waves-light btn" style="left: 36%;">Previous</a>
+                            <a class="next action-button waves-effect waves-light btn" style="left: 36%;">Next</a>
+                            
 
+                          </fieldset>
+                          <fieldset style="border: none;">
+                            <h2 class="center fs-title" >Social Accounts</h2>
+                            <h3 class="center fs-subtitle">Your presence in the social world</h3>
+                            <h4 class="center fs-subtitle">Step 5/6</h4>
+                            <div class="row">
+                              <div class="input-field col s12 ">
+                                {% render_field form.facebook class="validate" %} 
+                                <label for="skill">Facebook Username</label>
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="input-field col s12 ">
+                                {% render_field form.github class="validate" %}
+                                <label for="skill">Github Username</label>
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="input-field col s12 ">
+                                {% render_field form.twitter class="validate" %}
+                                <label for="skill">Twitter Username</label>
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="input-field col s12 ">
+                                {% render_field form.linkedin class="validate" %}
+                                <label for="skill">Linkedin Username</label>
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="input-field col s12 ">
+                                {% render_field form.blog class="validate" %}
+                                <label for="skill">Blog Link</label>
+                              </div>
+                            </div>
+
+                            
+
+                            <a class="previous action-button waves-effect waves-light btn" style="left: 36%;">Previous</a>
+
+                            <a class="next action-button waves-effect waves-light btn" style="left: 36%;">Next</a>
+                          
+
+                          </fieldset>
+                          <fieldset style="border: none;">
+                            <h2 class="center fs-title" >Projects</h2>
+                            <h3 class="center fs-subtitle">Your projects are ready to change the world</h3>
+                            <h4 class="center fs-subtitle">Step 6/6</h4>
+                            <div class="row">
+                              <div class="input-field col s12 ">
+                                {% render_field form.project1_name class="validate" %}
+                                <label for="skill">Project 1 Name</label>
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="input-field col s12 ">
+                                {% render_field form.project1_url class="validate" %}
+                                <label for="skill">GitHub Link for Project</label>
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="input-field col s12 ">
+                                {% render_field form.project1_description class="validate" %}
+                                <label for="skill">A small description about the project 1</label>
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="input-field col s12 ">
+                                {% render_field form.project2_name class="validate" %}
+                                <label for="skill">Project 2 Name</label>
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="input-field col s12 ">
+                                {% render_field form.project2_url class="validate" %}
+                                <label for="skill">GitHub Link for Project</label>
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="input-field col s12 ">
+                                {% render_field form.project2_description class="validate" %}
+                                <label for="skill">A small description about the project 2</label>
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="input-field col s12 ">
+                                {% render_field form.project3_name class="validate" %}
+                                <label for="skill">Project 3 Name</label>
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="input-field col s12 ">
+                                {% render_field form.project3_url class="validate" %}
+                                <label for="skill">GitHub Link for Project</label>
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="input-field col s12 ">
+                                {% render_field form.project3_description class="validate" %}
+                                <label for="skill">A small description about the project 3</label>
+                              </div>
+                            </div>
+
+                            
+
+                            <a class="previous action-button waves-effect waves-light btn" style="left: 36%;">Previous</a>
                             <button class="btn waves-effect waves-light" type="submit" name="action" style="left: 36%;"><i class="material-icons right">send</i>Submit
                               
                             </button>
+                            
 
                           </fieldset>
                         </form>
