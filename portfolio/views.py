@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 from django.shortcuts import redirect, render, get_object_or_404
-from django.http import Http404
+from django.http import Http404, HttpResponse
 from .forms import PortfolioForm
 from .models import Portfolio
 import datetime
@@ -30,5 +30,11 @@ def Portfolio_display(request, pk):
 			raise Http404
 	else:
 		return render(request,'portfolio/home.html',{})		
+def View_all(request):
+	if request.user.is_authenticated():
+		qs = Portfolio.objects.filter(user=request.user).order_by('pk')
+		return render(request, 'portfolio/displayall.html', {"qs":qs})
+	else:
+		raise Http404	
 def home(request):
-	return render(request,'portfolio/home.html', {})	
+	return render(request, 'portfolio/home.html', {})

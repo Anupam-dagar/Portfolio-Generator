@@ -3,6 +3,7 @@ from __future__ import unicode_literals
 from django.db import models
 from datetime import date
 from django.conf import settings
+import datetime 
 class Portfolio(models.Model):
 	user = models.ForeignKey(settings.AUTH_USER_MODEL)
 	first_name = models.CharField(max_length=200)
@@ -32,6 +33,15 @@ class Portfolio(models.Model):
 	project3_name = models.CharField(max_length=500, default="", blank=True)
 	project3_url = models.CharField(max_length=500, default="", blank=True)
 	project3_description = models.CharField(max_length=300, default="", blank=True)
+	date_created = models.DateField(blank=True)
+	time_created = models.TimeField(blank=True)
+
+
+	def save(self):
+		if not self.id:
+			self.date_created = datetime.date.today()
+			self.time_created = datetime.datetime.now().time()
+		super(Portfolio, self).save()
+
 	def __str__(self):
-		return self.first_name
-	
+		return self.first_name	+ " " + self.last_name

@@ -90,27 +90,30 @@
 			<section id="three">
 				<div class="container">
 					<h3>Projects</h3>
-					<p>Integer eu ante ornare amet commetus vestibulum blandit integer in curae ac faucibus integer non. Adipiscing cubilia elementum integer. Integer eu ante ornare amet commetus.</p>
+					<p>These are some </p>
 					<div class="features">
 						<article>
-							<a href="#" class="image"><img src="{% static 'img/project1.jpg' %}" alt="" /></a>
+							<a href="{{detail.project1_url}}" class="image"><img src="{% static 'img/project1.jpg' %}" alt="" /></a>
 							<div class="inner">
-								<h4>Possibly broke spacetime</h4>
-								<p>Integer eu ante ornare amet commetus vestibulum blandit integer in curae ac faucibus integer adipiscing ornare amet.</p>
+								<h4>{{ detail.project1_name }}</h4>
+								<p>{{ detail.project1_description }}</p>
+								<p><a href="{{detail.project1_url}}">View Source Code <i class="fa fa-github fa-2x"></i></a></p>
 							</div>
 						</article>
 						<article>
-							<a href="#" class="image"><img src="{% static 'img/project2.jpg' %}" alt="" /></a>
+							<a href="{{detail.project2_url}}" class="image"><img src="{% static 'img/project2.jpg' %}" alt="" /></a>
 							<div class="inner">
-								<h4>Terraformed a small moon</h4>
-								<p>Integer eu ante ornare amet commetus vestibulum blandit integer in curae ac faucibus integer adipiscing ornare amet.</p>
+								<h4>{{ detail.project2_name }}</h4>
+								<p>{{ detail.project2_description }}</p>
+								<p><a href="{{detail.project2_url}}">View Source Code <i class="fa fa-github fa-2x"></i></a></p>
 							</div>
 						</article>
 						<article>
-							<a href="#" class="image"><img src="{% static 'img/project3.png' %}" alt="" /></a>
+							<a href="{{detail.project3_url}}" class="image"><img src="{% static 'img/project3.png' %}" alt="" /></a>
 							<div class="inner">
-								<h4>Snapped dark matter in the wild</h4>
-								<p>Integer eu ante ornare amet commetus vestibulum blandit integer in curae ac faucibus integer adipiscing ornare amet.</p>
+								<h4>{{ detail.project3_name }}</h4>
+								<p>{{ detail.project3_description }}</p>
+								<p><a href="{{detail.project3_url}}">View Source Code <i class="fa fa-github fa-2x"></i></a></p>
 							</div>
 						</article>
 					</div>
@@ -121,7 +124,7 @@
 			<section id="four">
 				<div class="container">
 					<h3>Contact Me</h3>
-					<p>Integer eu ante ornare amet commetus vestibulum blandit integer in curae ac faucibus integer non. Adipiscing cubilia elementum integer. Integer eu ante ornare amet commetus.</p>
+					<p>Give me call or send an email.</p>
 					<div class="row">
 					<div class="3u 5u(xsmall)">
 					<h4>Name:</h4>
