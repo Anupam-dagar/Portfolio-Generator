@@ -59,102 +59,106 @@
 				<header class="major">
 					<h2>{{ detail.first_name }} {{ detail.last_name }}</h2>
 					<p>{{detail.main_bio}}</p>
-					</header>
-				</div>
-			</section>
-
-			<!-- Two -->
-			<section id="two">
-				<div class="container">
-					<h3>Skills</h3>
-					<p>Integer eu ante ornare amet commetus vestibulum blandit integer in curae ac faucibus integer non. Adipiscing cubilia elementum integer lorem ipsum dolor sit amet.</p>
-					<ul class="feature-icons">
-						<li class="fa-code">{{ detail.skill1 }}</li>
-						<li class="fa-cubes">{{ detail.skill2 }}</li>
-						{% if detail.skill3 %}
-						<li class="fa-book">{{ detail.skill3 }}</li>
-						{% endif %}
-						{% if detail.skill4 %}
-						<li class="fa-coffee">{{ detail.skill4 }}</li>
-						{% endif %}
-						{% if detail.skill5 %}
-						<li class="fa-bolt">{{ detail.skill5 }}</li>
-						{% endif %}
-						{% if detail.skill6 %}
-						<li class="fa-users">{{ detail.skill6 }}</li>
-						{% endif %}
-					</ul>
-				</div>
-			</section>
-			<!-- Three -->
-			<section id="three">
-				<div class="container">
-					<h3>Projects</h3>
-					<p>These are some </p>
-					<div class="features">
-						<article>
-							<a href="{{detail.project1_url}}" class="image"><img src="{% static 'img/project1.jpg' %}" alt="" /></a>
-							<div class="inner">
-								<h4>{{ detail.project1_name }}</h4>
-								<p>{{ detail.project1_description }}</p>
-								<p><a href="{{detail.project1_url}}">View Source Code <i class="fa fa-github fa-2x"></i></a></p>
-							</div>
-						</article>
-						<article>
-							<a href="{{detail.project2_url}}" class="image"><img src="{% static 'img/project2.jpg' %}" alt="" /></a>
-							<div class="inner">
-								<h4>{{ detail.project2_name }}</h4>
-								<p>{{ detail.project2_description }}</p>
-								<p><a href="{{detail.project2_url}}">View Source Code <i class="fa fa-github fa-2x"></i></a></p>
-							</div>
-						</article>
-						<article>
-							<a href="{{detail.project3_url}}" class="image"><img src="{% static 'img/project3.png' %}" alt="" /></a>
-							<div class="inner">
-								<h4>{{ detail.project3_name }}</h4>
-								<p>{{ detail.project3_description }}</p>
-								<p><a href="{{detail.project3_url}}">View Source Code <i class="fa fa-github fa-2x"></i></a></p>
-							</div>
-						</article>
-					</div>
-				</div>
-			</section>
-
-			<!-- Four -->
-			<section id="four">
-				<div class="container">
-					<h3>Contact Me</h3>
-					<p>Give me call or send an email.</p>
-					<div class="row">
-					<div class="3u 5u(xsmall)">
-					<h4>Name:</h4>
-					</div>
-					<div class="6u 6u(xsmall)"><code>{{ detail.first_name }} {{ detail.last_name }}</code></div>
-					</div>
-					<div class="row">
-					<div class="3u 5u(xsmall)">
-					<h4>Phone Number:</h4>
-					</div>
-					<div class="6u 6u(xsmall)"><code>{{ detail.phone_number }}</code></div>
-					</div>
-					<div class="row">
-					<div class="3u 5u(xsmall)">
-					<h4>E-mail:</h4>
-					</div>
-					<div class="6u 6u(xsmall)"><code>{{ detail.email_address }}</code></div>
-					</div>
-				</div>
-			</section>
-		</div>
-
-		<!-- Footer -->
-		<section id="footer">
-			<div class="container">
-				<ul class="copyright">
-					<li>Portfolio generated using HoxNox</li><li>Creator: <a href="http://anupamdagar.me">Anupam Dagar</a></li>
-				</ul>
+				</header>
 			</div>
 		</section>
 
+		<!-- Two -->
+		<section id="two">
+			<div class="container">
+				<h3>Skills</h3>
+				<p>My skills which I use in the world of computer science.</p>
+				<ul class="feature-icons">
+					<li class="fa-code">{{ detail.skill1 }}</li>
+					<li class="fa-cubes">{{ detail.skill2 }}</li>
+					{% if detail.skill3 %}
+					<li class="fa-book">{{ detail.skill3 }}</li>
+					{% endif %}
+					{% if detail.skill4 %}
+					<li class="fa-coffee">{{ detail.skill4 }}</li>
+					{% endif %}
+					{% if detail.skill5 %}
+					<li class="fa-bolt">{{ detail.skill5 }}</li>
+					{% endif %}
+					{% if detail.skill6 %}
+					<li class="fa-users">{{ detail.skill6 }}</li>
+					{% endif %}
+				</ul>
+			</div>
+		</section>
+		<!-- Three -->
+		<section id="three">
+			<div class="container">
+				<h3>Projects</h3>
+				<p>Projects that I have worked upon. </p>
+				<div class="features">
+					<article>
+						<a href="{{ detail.project1_url }}" class="image"><img src="{% static 'img/project1.jpg' %}" alt="" /></a>
+						<div class="inner">
+							<h4>{{ detail.project1_name }}</h4>
+							<p>{{ detail.project1_description }}</p>
+							<p><a href="{{ detail.project1_url }}">View Source Code <i class="fa fa-github fa-2x"></i></a></p>
+						</div>
+					</article>
+					{% if detail.project2_name and detail.project2_description and detail.project2_url %}
+					<article>
+						<a href="{{ detail.project2_url }}" class="image"><img src="{% static 'img/project2.jpg' %}" alt="" /></a>
+						<div class="inner">
+							<h4>{{ detail.project2_name }}</h4>
+							<p>{{ detail.project2_description }}</p>
+							<p><a href="{{ detail.project2_url }}">View Source Code <i class="fa fa-github fa-2x"></i></a></p>
+						</div>
+					</article>
+					{% endif %}
+					{% if detail.project3_name and detail.project3_description and detail.project3_url %}
+					<article>
+					<a href="{{ detail.project3_url }}" class="image"><img src="{% static 'img/project3.png' %}" alt="" /></a>
+						<div class="inner">
+							<h4>{{ detail.project3_name }}</h4>
+							<p>{{ detail.project3_description }}</p>
+							<p><a href="{{ detail.project3_url }}">View Source Code <i class="fa fa-github fa-2x"></i></a></p>
+						</div>
+					</article>
+					{% endif %}
+				</div>
+			</div>
+		</section>
+
+		<!-- Four -->
+		<section id="four">
+			<div class="container">
+				<h3>Contact Me</h3>
+				<p>Give me call or send an email.</p>
+				<div class="row">
+					<div class="3u 5u(xsmall)">
+						<h4>Name:</h4>
+					</div>
+					<div class="6u 6u(xsmall)"><code>{{ detail.first_name }} {{ detail.last_name }}</code></div>
+				</div>
+				<div class="row">
+					<div class="3u 5u(xsmall)">
+						<h4>Phone Number:</h4>
+					</div>
+					<div class="6u 6u(xsmall)"><code>{{ detail.phone_number }}</code></div>
+				</div>
+				<div class="row">
+					<div class="3u 5u(xsmall)">
+						<h4>E-mail:</h4>
+					</div>
+					<div class="6u 6u(xsmall)"><code>{{ detail.email_address }}</code></div>
+				</div>
+			</div>
+		</section>
 	</div>
-	{% endblock %}
+
+	<!-- Footer -->
+	<section id="footer">
+		<div class="container">
+			<ul class="copyright">
+				<li>Portfolio generated using HoxNox</li><li>Creator: <a href="http://anupamdagar.me">Anupam Dagar</a></li>
+			</ul>
+		</div>
+	</section>
+
+</div>
+{% endblock %}

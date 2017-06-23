@@ -6,7 +6,6 @@ from .forms import PortfolioForm
 from .models import Portfolio
 import datetime
 from registration.backends.hmac.views import RegistrationView
-
 def Portfolio_detail(request):
 	if request.user.is_authenticated():
 		if request.method == "POST":
