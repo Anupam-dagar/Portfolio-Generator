@@ -2,6 +2,7 @@ $(function() {
 
 $("#id_username").prop('id', 'name');
 $("#id_password").prop('id', 'pass');
+$("#id_email").prop('id', 'email');
 
    $(".input input").focus(function() {
 
