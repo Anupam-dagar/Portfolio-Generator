@@ -13,34 +13,6 @@
   <script type="text/javascript" src="{% static 'js/index.js' %}"></script>
 {% endblock %}
 {% block content %}
-<nav class="nav">
-  <div class="burger">
-    <div class="burger__patty"></div>
-  </div>
-
-  <ul class="nav__list">
-    <li class="nav__item">
-      <a href="{% url 'home' %}" class="nav__link c-blue"><i class="fa fa-camera-retro"></i>home</a>
-    </li>
-    <li class="nav__item">
-    {% if user.is_authenticated %}
-    {
-      <a href="#2" class="nav__link c-yellow scrolly"><i class="fa fa-bolt"></i>Logout</a>
-    }
-    {% else %}
-    {
-      <a href="#2" class="nav__link c-yellow scrolly"><i class="fa fa-bolt"></i>Login</a>
-    }
-    {% endif %}
-    </li>
-    <li class="nav__item">
-      <a href="#3" class="nav__link c-red"><i class="fa fa-music"></i></a>
-    </li>
-    <li class="nav__item">
-      <a href="#4" class="nav__link c-green"><i class="fa fa-paper-plane"></i></a>
-    </li>
-  </ul>
-</nav>
 {% if user.is_authenticated %}
 <div class="materialContainer">
 
