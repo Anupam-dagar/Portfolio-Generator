@@ -47,7 +47,7 @@
 
    <div class="box">
 
-      <div class="title">LOGIN</div>
+      <div class="title">LOGIN<a href="/"><i class="fa fa-home" style="margin-left: 5em;color: #ED2553;"></i></a></div>
 <form method="POST">
 {% csrf_token %}
 {% if form.errors %}
@@ -68,7 +68,9 @@
   <input class="form-control" type="hidden" name="next" value="{{ next }}"/>
          <button type="submit" name="submit" value="{% trans 'Log in' %}"><span>GO</span> <i class="fa fa-check"></i></button>
       </div>
-
+<div class="button login">
+         <a href="/"><button name="redirect"><span>HOME</span> <i class="fa fa-check"></i></button></a>
+      </div>
 </form>
       <a href="{% url 'auth_password_reset' %}" class="pass-forgot">Forgot your password?</a>
 
@@ -96,7 +98,6 @@
 
 </form>
       <a href="{% url 'auth_password_reset' %}" class="pass-forgot">Forgot your password?</a>
-
    </div>
 
    
