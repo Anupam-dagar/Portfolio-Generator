@@ -43,10 +43,11 @@
                         <h2 class="center fs-title" >Personal Details</h2>
                         <h3 class="center fs-subtitle">Tell us about yourself</h3>
                         <h4 class="center fs-subtitle">Step 1/6</h4>
+                        <h3 class="fs-title center">Fields marked with asterisk (*) are required.</h3>
                         <div class="row">
                           <div class="input-field col s12 ">
                             {% render_field form.first_name class="validate" data-length="50" %}
-                            <label for="first_name" data-wrong="wrong" data-success="OK">First Name</label>
+                            <label for="first_name">First Name *</label>
                           </div>
                         </div>
                         <div class="row">
@@ -59,7 +60,7 @@
                         <div class="row">
                           <div class="input-field col s12">
                             {% render_field form.date_of_birth class="validate" data-length="10" %}
-                            <label for="password" data-wrong="wrong" data-success="OK">Date of Birth</label>
+                            <label for="password">Date of Birth (enter in YYYY-MM-DD format) *</label>
                           </div>
                         </div>
                             <a class="next action-button waves-effect waves-light btn" style="left: 40%;">Next</a>
@@ -74,13 +75,13 @@
                             <div class="row">
                               <div class="input-field col s12 ">
                                 {% render_field form.email_address class="validate" type="email" %}
-                                <label for="email" data-wrong="wrong" data-success="OK">Email</label>
+                                <label for="email" data-wrong="wrong" data-success="OK">Email *</label>
                               </div>
                             </div>
                             <div class="row">
                               <div class="input-field col s12">
                                 {% render_field form.phone_number class="validate" data-length="10" %}
-                                <label for="Phone number" data-wrong="wrong" data-success="OK">Phone Number</label>
+                                <label for="Phone number" data-wrong="wrong" data-success="OK">Phone Number *</label>
                               </div>
                             </div>
                             <a class="previous action-button waves-effect waves-light btn" style="left: 36%;">Previous</a>
@@ -97,7 +98,7 @@
                             <h4 class="center fs-subtitle">Step 3/6</h4>
                             <div class="row">
                               <div class="input-field col s12 ">
-                                {% render_field form.small_bio class="validate" %}
+                                {% render_field form.small_bio class="validate" data-length="200" %}
                                 <label for="smbio">Small Bio</label>
                               </div>
                             </div>
@@ -105,7 +106,7 @@
                               <div class="input-field col s12">
                               {% render_field form.main_bio class="validate materialize-textarea" data-length="600" %}
 
-                                <label for="textarea1">Textarea</label>
+                                <label for="textarea1">Main Bio *</label>
                               </div>
                             </div>
 
@@ -119,13 +120,13 @@
                             <div class="row">
                               <div class="input-field col s12 ">
                                 {% render_field form.skill1 class="validate" %}
-                                <label for="skill">Skill1</label>
+                                <label for="skill">Skill1 *</label>
                               </div>
                             </div>
                             <div class="row">
                               <div class="input-field col s12 ">
                                 {% render_field form.skill2 class="validate" %}
-                                <label for="skill">Skill2</label>
+                                <label for="skill">Skill2 *</label>
                               </div>
                             </div>
                             <div class="row">
@@ -167,7 +168,7 @@
                             <div class="row">
                               <div class="input-field col s12 ">
                                 {% render_field form.facebook class="validate" %} 
-                                <label for="skill">Facebook Username</label>
+                                <label for="skill">Facebook Username *</label>
                               </div>
                             </div>
                             <div class="row">
@@ -210,19 +211,19 @@
                             <div class="row">
                               <div class="input-field col s12 ">
                                 {% render_field form.project1_name class="validate" %}
-                                <label for="skill">Project 1 Name</label>
+                                <label for="skill">Project 1 Name *</label>
                               </div>
                             </div>
                             <div class="row">
                               <div class="input-field col s12 ">
                                 {% render_field form.project1_url class="validate" %}
-                                <label for="skill">GitHub Link for Project</label>
+                                <label for="skill">GitHub Link for Project *</label>
                               </div>
                             </div>
                             <div class="row">
                               <div class="input-field col s12 ">
                                 {% render_field form.project1_description class="validate" %}
-                                <label for="skill">A small description about the project 1</label>
+                                <label for="skill">A small description about the project 1 *</label>
                               </div>
                             </div>
                             <div class="row">
