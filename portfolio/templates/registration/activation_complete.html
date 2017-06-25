@@ -7,7 +7,7 @@
 <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
 <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
 <link href="{% static 'css/home.css' %}" rel="stylesheet">
-<meta http-equiv="refresh" content="2;url=/" />
+<meta http-equiv="refresh" content="2;url={% url 'auth_login' %}" />
 {% endblock %}
 {% block content %}
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
@@ -22,7 +22,7 @@
 						<h1 class="brand-heading" style="font-size: 7em;">Account Activated</h1>
 						<p class="intro-text">You will be redirected automatically, if not, use the button below.
 							<br></p>
-							<a href="/"><button class="btn btn-danger btn-lg">Home</button></a>
+							<a href="{% url 'auth_login' %}"><button class="btn btn-danger btn-lg">Login</button></a>
 						</div>
 					</div>
 				</div>
