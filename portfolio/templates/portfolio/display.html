@@ -16,7 +16,7 @@
 <section id="header">
 	<header>
 		<span class="image avatar"><img src="{% static 'img/user.png' %}" alt="" /></span>
-		<h1 id="logo">{% if detail.blog %}<a href="#">{{ detail.first_name }} {{ detail.last_name }}</a>
+		<h1 id="logo">{% if detail.blog %}<a href="{{ detail.blog }}">{{ detail.first_name }} {{ detail.last_name }}</a>
 		{% else %}
 		{{ detail.first_name }} {{ detail.last_name }}
 		{% endif %}
