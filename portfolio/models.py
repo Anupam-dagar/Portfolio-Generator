@@ -10,7 +10,7 @@ class Portfolio(models.Model):
 	last_name = models.CharField(max_length=200, blank=True)
 	date_of_birth = models.DateField()
 	email_address = models.EmailField(max_length=254)
-	phone_number = models.SmallIntegerField(default="")
+	phone_number = models.IntegerField(default="")
 	small_bio = models.CharField(max_length=200, default="", blank=True)
 	main_bio = models.CharField(max_length=600, default="")
 	skill1 = models.CharField(max_length=100, default="")
