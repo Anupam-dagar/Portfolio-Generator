@@ -28,32 +28,6 @@
   </div>
 </section>
 {% else %}
-<nav class="nav">
-  <div class="burger">
-    <div class="burger__patty"></div>
-  </div>
-
-  <ul class="nav__list">
-    <li class="nav__item">
-      <a href="{% url 'home' %}" class="nav__link c-blue"><i class="fa fa-home"></i>home</a>
-    </li>
-    <li class="nav__item">
-      {% if user.is_authenticated %}
-      {
-      <a href="{% url 'auth_logout' %}" class="nav__link c-yellow scrolly"><i class="fa fa-sign-out"></i>Logout</a>
-    }
-    {% else %}
-    {
-    <a href="{% url 'auth_login' %}" class="nav__link c-yellow scrolly"><i class="fa fa-sign-in"></i>Login</a>
-  }
-  {% endif %}
-</li>
-<li class="nav__item">
-  <a href="#3" class="nav__link c-red"><i class="fa fa-github"></i>Source</a>
-</li>
-
-</ul>
-</nav>
 <section class="page">
   <div class="modal">
     <div class="modal-wrapper">
