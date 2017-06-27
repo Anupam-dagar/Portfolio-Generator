@@ -20,7 +20,7 @@
                     Menu <i class="fa fa-bars"></i>
                 </button>
                 <a class="navbar-brand page-scroll" href="#page-top">
-                    <i class="fa fa-play-circle"></i> <span class="light">Hox</span> Nox
+                    <img src="{% static 'img/logonav.png' %}" style="width: 65%;">
                 </a>
             </div>
 
@@ -84,8 +84,9 @@
         <div class="intro-body">
             <div class="container">
                 <div class="row">
+                        <img src="{% static 'img/hoxnoxlogowhite.png' %}" class="img-responsive" style="margin-top: -4%;margin-left: 40%; width: 20%;"><br>
+
                     <div class="col-md-8 col-md-offset-2">
-                        <h1 class="brand-heading">HoxNox</h1>
                         {% if user.is_authenticated %}
                         <p class="intro-text">Welcome {{request.user}}, start by entering your details.
                             <br></p>
