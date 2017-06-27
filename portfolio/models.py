@@ -57,4 +57,4 @@ class Feedback(models.Model):
 		super(Feedback, self).save()
 
 	def __str__(self):
-		return self.user.username + str(pk)
+		return str(self.pk) + " - " + self.user.username
