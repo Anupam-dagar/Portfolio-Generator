@@ -1,7 +1,7 @@
 {% extends 'portfolio/base.html' %}
 {% load widget_tweaks %}
 {% load staticfiles %}
-{% block title %}Portfolio-Ready-{{ detail.first_name }}{% endblock %}
+{% block title %}{{detail.first_name}}'s Profile{% endblock %}
 {% block extend_head %}
 <link rel="stylesheet" href="{% static 'css/display.css' %}" />
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>

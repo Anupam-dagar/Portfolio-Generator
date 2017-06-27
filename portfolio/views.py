@@ -7,6 +7,7 @@ from .models import Portfolio
 import datetime
 from registration.backends.hmac.views import RegistrationView
 from django.contrib import messages
+from django.conf import settings
 def Portfolio_detail(request):
 	if request.user.is_authenticated():
 		if request.method == "POST":
@@ -21,9 +22,9 @@ def Portfolio_detail(request):
 		return render(request, 'portfolio/details.html', {'form':form})
 	else:
 		return render(request,'portfolio/home.html',{})
-def Portfolio_display(request, pk):
+def Portfolio_display(request, username, pk):
 	if request.user.is_authenticated():
-		detail = get_object_or_404(Portfolio, pk=pk)
+		detail = get_object_or_404(Portfolio, user__username=username, pk=pk)
 		if request.user==detail.user:
 			return render(request, 'portfolio/display.html', {'detail':detail})
 		else:
