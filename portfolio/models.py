@@ -45,3 +45,16 @@ class Portfolio(models.Model):
 
 	def __str__(self):
 		return self.first_name	+ " " + self.last_name
+
+class Feedback(models.Model):
+	user = models.ForeignKey(settings.AUTH_USER_MODEL)
+	feedback_field = models.CharField(max_length=1500,blank=True)
+	feedback_done = models.BooleanField(default=False)
+
+	def save(self):
+		if self.feedback_done == False:
+			self.feedback_done = True
+		super(Feedback, self).save()
+
+	def __str__(self):
+		return self.user.username + str(pk)

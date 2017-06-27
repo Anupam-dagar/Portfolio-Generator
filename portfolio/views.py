@@ -2,10 +2,11 @@
 from __future__ import unicode_literals
 from django.shortcuts import redirect, render, get_object_or_404
 from django.http import Http404, HttpResponse
-from .forms import PortfolioForm
+from .forms import PortfolioForm, FeedbackForm
 from .models import Portfolio
 import datetime
 from registration.backends.hmac.views import RegistrationView
+from django.contrib import messages
 def Portfolio_detail(request):
 	if request.user.is_authenticated():
 		if request.method == "POST":
@@ -36,4 +37,15 @@ def View_all(request):
 	else:
 		raise Http404	
 def home(request):
-	return render(request, 'portfolio/home.html', {})
+	if request.method == "POST":
+		form = FeedbackForm(request.POST)
+		if form.is_valid():
+			detail = form.save(commit=False)
+			detail.user = request.user
+			detail.save()
+			messages.success(request, 'Feedback submitted, you can submit another feedback.')
+			form = FeedbackForm()
+			return redirect('https://hoxnox.herokuapp.com/#feedback')
+	else:	
+		form = FeedbackForm
+	return render(request, 'portfolio/home.html', {"form":form})
