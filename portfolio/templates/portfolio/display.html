@@ -4,6 +4,7 @@
 {% block title %}{{detail.first_name}}'s Profile{% endblock %}
 {% block extend_head %}
 <link rel="stylesheet" href="{% static 'css/display.css' %}" />
+<link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet"> 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script src="{% static 'js/jquery.scrollzer.min.js' %}"></script>
 <script src="{% static 'js/jquery.scrolly.min.js' %}"></script>
@@ -17,9 +18,9 @@
 	<header>
 		<span class="image avatar"><img src="{% static 'img/user.png' %}" alt="" /></span>
 		<h1 id="logo">{% if detail.blog %}<a href="{{ detail.blog }}">{{ detail.first_name }} {{ detail.last_name }}</a>
-		{% else %}
-		{{ detail.first_name }} {{ detail.last_name }}
-		{% endif %}
+			{% else %}
+			{{ detail.first_name }} {{ detail.last_name }}
+			{% endif %}
 		</h1>
 		<p>{{detail.small_bio}}</p>
 	</header>
@@ -56,7 +57,12 @@
 
 	<!-- Main -->
 	<div id="main">
+	<section id="banners">
 
+      
+      <h2 id="overtext" style="font-family: 'Fredoka One', cursive;text-transform: uppercase;color: white;">{{ detail.first_name }} {{ detail.last_name }}</h2>
+
+		</section>
 		<!-- One -->
 		<section id="one">
 			<div class="container">
@@ -116,7 +122,7 @@
 					{% endif %}
 					{% if detail.project3_name and detail.project3_description and detail.project3_url %}
 					<article>
-					<a href="{{ detail.project3_url }}" class="image"><img src="{% static 'img/project3.png' %}" alt="" /></a>
+						<a href="{{ detail.project3_url }}" class="image"><img src="{% static 'img/project3.png' %}" alt="" /></a>
 						<div class="inner">
 							<h4>{{ detail.project3_name }}</h4>
 							<p>{{ detail.project3_description }}</p>
