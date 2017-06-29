@@ -9,6 +9,9 @@ from registration.backends.hmac.views import RegistrationView
 from django.contrib import messages
 from django.conf import settings
 
+
+
+
 def Portfolio_detail(request):
 	if request.user.is_authenticated():
 		if request.method == "POST":
@@ -23,6 +26,9 @@ def Portfolio_detail(request):
 		return render(request, 'portfolio/details.html', {'form':form})
 	else:
 		return render(request,'portfolio/home.html',{})
+
+
+
 
 def Portfolio_display(request, username, pk):
 	if request.user.is_authenticated():
