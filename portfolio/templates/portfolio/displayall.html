@@ -86,10 +86,18 @@
                       <div class="panel-body" style="color: black;">
                           <p><strong>Created On:</strong> {{record.date_created}}</p>
                           <p><strong>At Time:</strong> {{record.time_created}}</p>
-                          
+                          <p><strong>Modified On:</strong> {{record.updated_on}}</p>
+                          <p><strong>Modified At Time:</strong> {{record.updated_at}}</p>
                       </div>
                       <div class="panel-footer">
+                      <div class="row">
+                      <div class="col-lg-6 col-lg-offset-1">
                           <a href="{% url 'Portfolio_display' username=record.user pk=record.pk %}" class="btn btn-default btn-lg"><span class="network-name">View Portfolio</span></a>
+                          </div>
+                          <div class="col-lg-5">
+                          <a href="{% url 'editform' username=record.user pk=record.pk %}" class="btn btn-default btn-lg"><span class="network-name">Edit</span></a>
+                          </div>
+                      </div>
                       </div>
                   </div>      
               </div>
