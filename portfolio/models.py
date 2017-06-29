@@ -37,7 +37,6 @@ class Portfolio(models.Model):
 	time_created = models.TimeField(auto_now_add=True)
 	updated_on = models.DateField(auto_now=True)
 	updated_at = models.TimeField(auto_now=True)	
-	dummy = models.CharField(max_length=20, default="")
 
 	def __str__(self):
 		return self.first_name	+ " " + self.last_name
