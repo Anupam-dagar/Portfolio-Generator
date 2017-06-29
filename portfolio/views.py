@@ -8,6 +8,7 @@ import datetime
 from registration.backends.hmac.views import RegistrationView
 from django.contrib import messages
 from django.conf import settings
+
 def Portfolio_detail(request):
 	if request.user.is_authenticated():
 		if request.method == "POST":
@@ -16,12 +17,13 @@ def Portfolio_detail(request):
 				detail = form.save(commit=False)
 				detail.user = request.user
 				detail.save()
-				return redirect('Portfolio_display', pk=detail.pk)
+				return redirect('Portfolio_display', username=detail.user, pk=detail.pk)
 		else:	
 			form = PortfolioForm
 		return render(request, 'portfolio/details.html', {'form':form})
 	else:
 		return render(request,'portfolio/home.html',{})
+
 def Portfolio_display(request, username, pk):
 	if request.user.is_authenticated():
 		detail = get_object_or_404(Portfolio, user__username=username, pk=pk)
@@ -30,13 +32,15 @@ def Portfolio_display(request, username, pk):
 		else:
 			raise Http404
 	else:
-		return render(request,'portfolio/home.html',{})		
+		return render(request,'portfolio/home.html',{})
+
 def View_all(request):
 	if request.user.is_authenticated():
 		qs = Portfolio.objects.filter(user=request.user).order_by('pk')
 		return render(request, 'portfolio/displayall.html', {"qs":qs})
 	else:
-		raise Http404	
+		raise Http404
+
 def home(request):
 	if request.method == "POST":
 		form = FeedbackForm(request.POST)
@@ -50,3 +54,16 @@ def home(request):
 	else:	
 		form = FeedbackForm
 	return render(request, 'portfolio/home.html', {"form":form})
+
+def editform(request, username, pk):
+	instance = get_object_or_404(Portfolio, user__username=username, pk=pk)
+	if request.method=="POST":
+		form=PortfolioForm(request.POST, instance=instance)
+		if form.is_valid():
+			instance =  form.save(commit=False)
+			instance.user = request.user
+			instance.save()
+			return redirect('Portfolio_display', username=instance.user, pk=instance.pk)
+	else:
+		form =  PortfolioForm(instance=instance)
+	return render(request, 'portfolio/details.html',{'form':form})			
