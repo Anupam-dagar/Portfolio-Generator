@@ -93,10 +93,11 @@
 
       <div class="button login">
   <input class="form-control" type="hidden" name="next" value="{{ next }}"/>
-         <button type="submit" name="submit" value="{% trans 'Log in' %}"><span>GO</span> <i class="fa fa-check"></i></button>
+         <button type="submit" name="submit" value="{% trans 'Log in' %}"><span>Login</span> <i class="fa fa-check"></i></button>
       </div>
 
 </form>
+<a href="{% url 'social:begin' 'facebook' %}">Login with Facebook</a>
       <a href="{% url 'auth_password_reset' %}" class="pass-forgot">Forgot your password?</a>
    </div>
 

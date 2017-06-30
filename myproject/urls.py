@@ -19,4 +19,5 @@ urlpatterns = [
 	url(r'', include('portfolio.urls')),
     url(r'^adminsitehnox/', admin.site.urls),
     url(r'^accounts/', include('registration.backends.hmac.urls')),
+    url(r'^oauth/', include('social_django.urls', namespace='social')),
 ]
