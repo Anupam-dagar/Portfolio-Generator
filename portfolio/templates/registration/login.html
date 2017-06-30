@@ -97,8 +97,10 @@
       </div>
 
 </form>
-<a href="{% url 'social:begin' 'facebook' %}">Login with Facebook</a>
-<a href="{% url 'social:begin' 'google-oauth2' %}">Google+</a>
+<a class="lead loginBtn loginBtn--facebook" href="{% url 'social:begin' 'facebook' %}" style="left: 12%;color: white;bottom: 0.5em;text-decoration: none;"><span class="lead" style="font-size: 1.2em;">Login with Facebook</span></a><br>
+  <a class="lead loginBtn loginBtn--google" href="{% url 'social:begin' 'google-oauth2' %}" style="left: 12%;color: white;text-decoration: none;padding-right: 11%;top: 0.5em"><span class="lead" style="font-size: 1.2em;">Login with Google</span></a>
+<br><br><br>
+
       <a href="{% url 'auth_password_reset' %}" class="pass-forgot">Forgot your password?</a>
    </div>
 
