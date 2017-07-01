@@ -1,7 +1,11 @@
 @charset "UTF-8";
-@import url(font-awesome.min.css);
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300");
-
+@media screen and (min-width: 634px)
+{
+	br.fix{
+		display: none;
+	}
+}
 /*
 	Identity by HTML5 UP
 	html5up.net | @ajlkn

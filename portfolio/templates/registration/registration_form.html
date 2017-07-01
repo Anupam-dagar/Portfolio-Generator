@@ -74,11 +74,11 @@
 
       </ul>
     </form>
-    <h1 style="margin-right: 10em;">Or Signup using:</h1>
-    <div class="field"><a class="lead loginBtn loginBtn--facebook" href="{% url 'social:begin' 'facebook' %}" style="color: white;text-decoration: none;float: left;"><span class="lead" style="font-size: 1.2em;">Login with Facebook</span></a>
-      <a class="lead loginBtn loginBtn--google" href="{% url 'social:begin' 'google-oauth2' %}" style="color: white;padding-right: 6.4%;text-decoration: none;float: left;"><span class="lead" style="font-size: 1.2em;">Login with Google</span></a></div>
-      <div class="field"><br><br>
-        <a href="{% url 'auth_login' %}" style="text-decoration: underline;"><h2>Already have an account: LOGIN</h2></a>
+    <h1>Or Signup using:</h1>
+    <div class="field"><a class="lead loginBtn loginBtn--facebook" href="{% url 'social:begin' 'facebook' %}" style="color: white;text-decoration: none;">Login with Facebook</a><br class="fix"><br class="fix">
+      <a class="lead loginBtn loginBtn--google" href="{% url 'social:begin' 'google-oauth2' %}" style="color: white;text-decoration: none;padding-right: 2.4em;">Login with Google</a></div>
+      <div class="field"><br>
+        <a href="{% url 'auth_login' %}" style="text-decoration: underline;"><p>Already have an account: LOGIN</p></a>
       </div>
     </section>
   </div>
