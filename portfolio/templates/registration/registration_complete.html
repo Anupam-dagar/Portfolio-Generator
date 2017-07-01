@@ -1,9 +1,52 @@
 {% extends "portfolio/base.html" %}
+{% load staticfiles %}
+{% load widget_tweaks %}
 {% load i18n %}
-{% block title %}HoxNox-Registration Complete{% endblock %}
+{% block title %}HoxNox-Register{% endblock %}
 {% block extend_head %}
-<meta http-equiv="refresh" content="0;url=/" />
+<title>HoxNox-Register</title>
+<meta charset="utf-8" />
+<!--[if lte IE 8]><script src="assets/js/html5shiv.js"></script><![endif]-->
+<link rel="stylesheet" href="{% static 'css/login.css' %}" />
+<meta http-equiv="refresh" content="4;url=/" />
+<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 {% endblock %}
 {% block content %}
-<p>{% trans "You are now registered. Activation email sent." %}</p>
+<body class="is-loading">
+	<div id="wrapper">
+
+		<!-- Main -->
+		<section id="main">
+			<header>
+				<h1>Sign Up<a href="/"><i class="fa fa-home" style="float: right;"></i></a></h1>
+				<p style="margin-right: 2em;">For An Account</p>
+			</header>
+			<hr />
+			<h2>{% trans "You are now registered." %}</h2> 
+			<h1 style="font-size: 4em;">{% trans "Activation email sent." %}</h1>
+			<p>You will be redirected automatically, if not, use the following button.</p> 
+			<hr />
+			<ul class="actions">
+				<li><a href="/" class="button">HOME</a></li>
+			</ul>
+		</section>
+		<footer id="footer">
+			<ul class="copyright">
+				<li>HOXNOX</li><li><a href="/">HOME</a></li>
+			</ul>
+		</footer>
+	</div>
+
+
+	<!-- Scripts -->
+	<!--[if lte IE 8]><script src="assets/js/respond.min.js"></script><![endif]-->
+	<script>
+		if ('addEventListener' in window) {
+			window.addEventListener('load', function() { document.body.className = document.body.className.replace(/\bis-loading\b/, ''); });
+			document.body.className += (navigator.userAgent.match(/(MSIE|rv:11\.0)/) ? ' is-ie' : '');
+		}
+	</script>
+
+</body>
 {% endblock %}
