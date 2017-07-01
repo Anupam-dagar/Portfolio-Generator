@@ -14,6 +14,7 @@
 <script type="text/javascript" src="{% static 'js/index.js' %}"></script>
 {% endblock %}
 {% block content %}
+<body>
 {% if user.is_authenticated %}
 <section class="page">
   <div class="modal">
@@ -171,4 +172,5 @@
 
   <input type="submit" value="{% trans 'Submit' %}" />
 </form> -->
+</body>
 {% endblock %}
