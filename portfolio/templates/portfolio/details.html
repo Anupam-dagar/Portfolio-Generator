@@ -1,304 +1,213 @@
-{% extends 'portfolio/base.html' %}
-{% load widget_tweaks %}
+{% extends "portfolio/base.html" %}
 {% load staticfiles %}
-{% block title %}Portfolio-Enter Details{% endblock %}
+{% load widget_tweaks %}
+{% load i18n %}
+{% block title %}HoxNox-Enter Details{% endblock %}
 {% block extend_head %}
-<!-- CSS  -->
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-<link href="{% static 'css/materialize.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
-<link href="{% static 'css/form.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
+	<meta charset="utf-8" />
+	<link rel="stylesheet" href="{% static 'css/register.css' %}" />
+	<style type="text/css">
+			form.myform fieldset {
+		display: none;
+	}
+	</style>
 {% endblock %}
 {% block content %}
-<body>
-<style type="text/css">
-  body{
-    background: url({% static 'img/home3.png' %});
-  }
-</style>
+<body class="is-loading">
 
-<div class="container">
-  <div class="section">
+	<!-- Wrapper -->
+	<div id="wrapper">
 
-    <!--   Icon Section   -->
-    <div class="row">
-      <div class="col s12 m6 offset-m3">
-        <div class="icon-block">
-          <h2 class="center light-blue-text"><i class="material-icons">description</i></h2>
-
-  
-        
-          {{form.errors}}
-          <div class="row">
-            <div class="col s12 m12">
-              <div class="card white z-depth-5" style="padding-left: 2em;padding-right: 2em; height: 0;">
-                <div class="card-content black-text">
-
-
-                  <div class="row">
-
-                    <!-- form -->
-                    <form class="col s12" id="msform" method="POST">
+		<!-- Main -->
+		<form method="post" class="myform">
                       {% csrf_token %}
-                      <!-- Personal Details -->
-                      <fieldset style="border: none;">
-                        <h2 class="center fs-title" >Personal Details</h2>
-                        <h3 class="center fs-subtitle">Tell us about yourself</h3>
-                        <h4 class="center fs-subtitle">Step 1/6</h4>
-                        <h3 class="fs-title center">Fields marked with asterisk (*) are required.</h3>
-                        <div class="row">
-                          <div class="input-field col s12 ">
-                            {% render_field form.first_name class="validate" data-length="50" %}
-                            <label for="first_name">First Name *</label>
-                          </div>
-                        </div>
-                        <div class="row">
-                          <div class="input-field col s12">
-                            {% render_field form.last_name class="validate" data-length="50" %}
-                            <label for="last_name">Last Name</label>
-                          </div>
-                        </div>
+			<fieldset style="display: block;">
+				<section id="main">
+					<header>
+						<h1>Personal Details<a href="/"><i class="fa fa-home" style="float: right;"></i></a></h1>
+						<p>FIELDS MARKED WITH ASTERISK (*) ARE REQUIRED.</p>
+					</header>
+					<hr />
+					<h2>Tell us about yourself</h2>
+					<div class="field">
+						{% render_field form.first_name placeholder="First Name *" %}
+					</div>
+					<br>
+					<div class="field">
+					{% render_field form.last_name placeholder="Last Name" %}
+					</div><br>
+					<div class="field">
+					{% render_field form.date_of_birth placeholder="Date of Birth (enter in YYYY-MM-DD format) *" %}
+					</div>
+					<hr />
+					<ul class="actions">
+						<a class="next button">NEXT</a>
+					</ul>
+				</section>
+			</fieldset>
+			<fieldset>
+				<section id="main" style="width: 37em;">
+					<header>
+						<h1>Contact Details<a href="/"><i class="fa fa-home" style="float: right;"></i></a></h1>
+						<p>How to get in touch with you?</p>
+					</header>
+					<hr />
+					<div class="field">
+						{% render_field form.email_address placeholder="Email Address *" %}
+					</div><br>
+					<div class="field">
+						{% render_field form.phone_number placeholder="Phone Number *" style="-moz-appearance: none;-webkit-appearance: none;-ms-appearance: none;appearance: none;border-radius: 4px;border: solid 1px #c8cccf;color: inherit;display: block;outline: 0;padding: 0 1em;text-decoration: none;width: 100%;" %}
+					</div>
+					<hr />
+					<ul class="actions">
+						<a class="previous button">Previous</a>
+						<a class="next button">NEXT</a>
+					</ul>
+				</section>
+			</fieldset>
+			<fieldset>
+				<section id="main">
+					<header>
+						<h1>Your BIO<a href="/"><i class="fa fa-home" style="float: right;"></i></a></h1>
+						<p>Time to know about you</p>
+					</header>
+					<hr />
+					<div class="field">
+						{% render_field form.small_bio placeholder="Small Bio" %}
+					</div><br>
+					<div class="field">
+						{% render_field form.main_bio placeholder="Main Bio *" %}
+					</div>
+					<hr />
+					<ul class="actions">
+						<a class="previous button">Previous</a>
+						<a class="next button">NEXT</a>
+					</ul>
+				</section>
+			</fieldset>
+			<fieldset>
+				<section id="main">
+					<header>
+						<h1>Skills<a href="/"><i class="fa fa-home" style="float: right;"></i></a></h1>
+						<p>Your area of expertise</p>
+					</header>
+					<hr />
+					<div class="field">
+                                {% render_field form.skill1 placeholder="Skill 1 *" %}
+                            </div><br>
+					<div class="field">
+                                {% render_field form.skill2 placeholder="Skill 2 *" %}
+                            </div><br>
+					<div class="field">
+                                {% render_field form.skill3 placeholder="Skill 3" %}
+                            </div><br>
+					<div class="field">
+                                {% render_field form.skill4 placeholder="Skill 4" %}
+                            </div><br>
+					<div class="field">
+                                {% render_field form.skill5 placeholder="Skill 5" %}
+                            </div><br>
+					<div class="field">
+                                {% render_field form.skill6 placeholder="Skill 6" %}
+                            </div>
+					<hr />
+					<ul class="actions">
+						<a class="previous button">Previous</a>
+						<a class="next button">NEXT</a>
+					</ul>
+				</section>
+			</fieldset>
+			<fieldset>
+				<section id="main">
+					<header>
+						<h1>Social Accounts<a href="/"><i class="fa fa-home" style="float: right;"></i></a></h1>
+						<p>Your Presence In The Social World</p>
+					</header>
+					<hr />
+					<div class="field">
+						{% render_field form.facebook placeholder="Facebook Username *" %}
+					</div><br>
+					<div class="field">
+						{% render_field form.github placeholder="Github Username" %}
+					</div><br>
+					<div class="field">
+						{% render_field form.twitter placeholder="Twitter Username" %}
+					</div><br>
+					<div class="field">
+						{% render_field form.linkedin placeholder="Linkedin Username" %}
+					</div><br>
+					<div class="field">
+						{% render_field form.blog placeholder="Blog Link (Include http://)" %}
+					</div>
+					<hr />
+					<ul class="actions">
+						<a class="previous button">Previous</a>
+						<a class="next button">NEXT</a>
+					</ul>
+				</section>
+			</fieldset>
+			<fieldset>
+				<section id="main">
+					<header>
+						<h1>Projects<a href="/"><i class="fa fa-home" style="float: right;"></i></a></h1>
+						<p>Your projects are ready to change the world</p>
+					</header>
+					<hr />
+					<div class="field">
+                                {% render_field form.project1_name placeholder="Project 1 Name *" %}
+					</div><br>
+					<div class="field">
+                                {% render_field form.project1_url placeholder="GitHub Link for Project *" %}
+					</div><br>
+					<div class="field">
+                                {% render_field form.project1_description placeholder="A small description about the project 1 *" %}
+					</div><br>
+					<div class="field">
+                                {% render_field form.project2_name placeholder="Project 2 Name" %}
+					</div><br>
+					<div class="field">
+                                {% render_field form.project2_url placeholder="GitHub Link for Project" %}
+					</div><br>
+					<div class="field">
+                                {% render_field form.project2_description placeholder="A small description about the project 2" %}
+					</div><br>
+					<div class="field">
+                                {% render_field form.project3_name placeholder="Project 3 Name" %}
+					</div><br>
+					<div class="field">
+                                {% render_field form.project3_url placeholder="GitHub Link for Project" %}
+					</div><br>
+					<div class="field">
+                                {% render_field form.project3_description placeholder="A small description about the project 3" %}
+					</div>
+					<hr />
+					<ul class="actions">
+						<li><a class="previous button">Previous</a></li>
+						<li><button type="submit" name="submit" value="{% trans 'SUBMIT' %}">SUBMIT</button></li>
+					</ul>
+				</section>
+			</fieldset>
+		</form>
 
-                        <div class="row">
-                          <div class="input-field col s12">
-                            {% render_field form.date_of_birth class="validate" data-length="10" %}
-                            <label for="password">Date of Birth (enter in YYYY-MM-DD format) *</label>
-                          </div>
-                        </div>
-          <a class="btn waves-effect waves-light left" href="/" >Home</a>
+		<!-- Footer -->
+		<footer id="footer">
+			<ul class="copyright">
+				<li>HOXNOX</li><li><a href="/">HOME</a></li>
+			</ul>
+		</footer>
 
-                            <a class="next action-button waves-effect waves-light btn" style="left: 28%;">Next</a>
-                            
+	</div>
 
-                          </fieldset>
-                          <!-- Contact Details -->
-                          <fieldset style="border: none;">
-                            <h2 class="center fs-title" >Contact Details</h2>
-                            <h3 class="center fs-subtitle">How to get in touch with you?</h3>
-                            <h4 class="center fs-subtitle">Step 2/6</h4>
-                            <div class="row">
-                              <div class="input-field col s12 ">
-                                {% render_field form.email_address class="validate" type="email" %}
-                                <label for="email" data-wrong="wrong" data-success="OK">Email *</label>
-                              </div>
-                            </div>
-                            <div class="row">
-                              <div class="input-field col s12">
-                                {% render_field form.phone_number class="validate" data-length="10" %}
-                                <label for="Phone number" data-wrong="wrong" data-success="OK">Phone Number *</label>
-                              </div>
-                            </div>
-                            <a class="previous action-button waves-effect waves-light btn" style="left: 36%;">Previous</a>
-                            <a class="next action-button waves-effect waves-light btn" style="left: 36%;">Next</a>
+	<!-- Scripts -->
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script type="text/javascript" src="{% static 'js/details.js' %}"></script>
+	<!--[if lte IE 8]><script src="assets/js/respond.min.js"></script><![endif]-->
+	<script>
+		if ('addEventListener' in window) {
+			window.addEventListener('load', function() { document.body.className = document.body.className.replace(/\bis-loading\b/, ''); });
+			document.body.className += (navigator.userAgent.match(/(MSIE|rv:11\.0)/) ? ' is-ie' : '');
+		}
+	</script>
 
-
-
-
-                          </fieldset>
-                          <!-- BIO -->
-                          <fieldset style="border: none;">
-                            <h2 class="center fs-title" >Your Bio</h2>
-                            <h3 class="center fs-subtitle">Time to know about you</h3>
-                            <h4 class="center fs-subtitle">Step 3/6</h4>
-                            <div class="row">
-                              <div class="input-field col s12 ">
-                                {% render_field form.small_bio class="validate" data-length="200" %}
-                                <label for="smbio">Small Bio</label>
-                              </div>
-                            </div>
-                            <div class="row">
-                              <div class="input-field col s12">
-                              {% render_field form.main_bio class="validate materialize-textarea" data-length="600" %}
-
-                                <label for="textarea1">Main Bio *</label>
-                              </div>
-                            </div>
-
-                            <a class="previous action-button waves-effect waves-light btn" style="left: 36%;">Previous</a>
-                            <a class="next action-button waves-effect waves-light btn" style="left: 36%;">Next</a>
-                          </fieldset>
-                          <fieldset style="border: none;">
-                            <h2 class="center fs-title" >Skills</h2>
-                            <h3 class="center fs-subtitle">Your area of expertise</h3>
-                            <h4 class="center fs-subtitle">Step 4/6</h4>
-                            <div class="row">
-                              <div class="input-field col s12 ">
-                                {% render_field form.skill1 class="validate" %}
-                                <label for="skill">Skill1 *</label>
-                              </div>
-                            </div>
-                            <div class="row">
-                              <div class="input-field col s12 ">
-                                {% render_field form.skill2 class="validate" %}
-                                <label for="skill">Skill2 *</label>
-                              </div>
-                            </div>
-                            <div class="row">
-                              <div class="input-field col s12 ">
-                                {% render_field form.skill3 class="validate" %}
-                                <label for="skill">Skill3</label>
-                              </div>
-                            </div>
-                            <div class="row">
-                              <div class="input-field col s12 ">
-                                {% render_field form.skill4 class="validate" %}
-                                <label for="skill">Skill4</label>
-                              </div>
-                            </div>
-                            <div class="row">
-                              <div class="input-field col s12 ">
-                                {% render_field form.skill5 class="validate" %}
-                                <label for="skill">Skill5</label>
-                              </div>
-                            </div>
-                            <div class="row">
-                              <div class="input-field col s12 ">
-                                {% render_field form.skill6 class="validate" %}
-                                <label for="skill">Skill6</label>
-                              </div>
-                            </div>
-
-                            
-
-                            <a class="previous action-button waves-effect waves-light btn" style="left: 36%;">Previous</a>
-                            <a class="next action-button waves-effect waves-light btn" style="left: 36%;">Next</a>
-                            
-
-                          </fieldset>
-                          <fieldset style="border: none;">
-                            <h2 class="center fs-title" >Social Accounts</h2>
-                            <h3 class="center fs-subtitle">Your presence in the social world</h3>
-                            <h4 class="center fs-subtitle">Step 5/6</h4>
-                            <div class="row">
-                              <div class="input-field col s12 ">
-                                {% render_field form.facebook class="validate" %} 
-                                <label for="skill">Facebook Username *</label>
-                              </div>
-                            </div>
-                            <div class="row">
-                              <div class="input-field col s12 ">
-                                {% render_field form.github class="validate" %}
-                                <label for="skill">Github Username</label>
-                              </div>
-                            </div>
-                            <div class="row">
-                              <div class="input-field col s12 ">
-                                {% render_field form.twitter class="validate" %}
-                                <label for="skill">Twitter Username</label>
-                              </div>
-                            </div>
-                            <div class="row">
-                              <div class="input-field col s12 ">
-                                {% render_field form.linkedin class="validate" %}
-                                <label for="skill">Linkedin Username</label>
-                              </div>
-                            </div>
-                            <div class="row">
-                              <div class="input-field col s12 ">
-                                {% render_field form.blog class="validate" %}
-                                <label for="skill">Blog Link (include http://)</label>
-                              </div>
-                            </div>
-
-                            
-
-                            <a class="previous action-button waves-effect waves-light btn" style="left: 36%;">Previous</a>
-
-                            <a class="next action-button waves-effect waves-light btn" style="left: 36%;">Next</a>
-                          
-
-                          </fieldset>
-                          <fieldset style="border: none;">
-                            <h2 class="center fs-title" >Projects</h2>
-                            <h3 class="center fs-subtitle">Your projects are ready to change the world</h3>
-                            <h4 class="center fs-subtitle">Step 6/6</h4>
-                            <div class="row">
-                              <div class="input-field col s12 ">
-                                {% render_field form.project1_name class="validate" %}
-                                <label for="skill">Project 1 Name *</label>
-                              </div>
-                            </div>
-                            <div class="row">
-                              <div class="input-field col s12 ">
-                                {% render_field form.project1_url class="validate" %}
-                                <label for="skill">GitHub Link for Project *</label>
-                              </div>
-                            </div>
-                            <div class="row">
-                              <div class="input-field col s12 ">
-                                {% render_field form.project1_description class="validate" %}
-                                <label for="skill">A small description about the project 1 *</label>
-                              </div>
-                            </div>
-                            <div class="row">
-                              <div class="input-field col s12 ">
-                                {% render_field form.project2_name class="validate" %}
-                                <label for="skill">Project 2 Name</label>
-                              </div>
-                            </div>
-                            <div class="row">
-                              <div class="input-field col s12 ">
-                                {% render_field form.project2_url class="validate" %}
-                                <label for="skill">GitHub Link for Project</label>
-                              </div>
-                            </div>
-                            <div class="row">
-                              <div class="input-field col s12 ">
-                                {% render_field form.project2_description class="validate" %}
-                                <label for="skill">A small description about the project 2</label>
-                              </div>
-                            </div>
-                            <div class="row">
-                              <div class="input-field col s12 ">
-                                {% render_field form.project3_name class="validate" %}
-                                <label for="skill">Project 3 Name</label>
-                              </div>
-                            </div>
-                            <div class="row">
-                              <div class="input-field col s12 ">
-                                {% render_field form.project3_url class="validate" %}
-                                <label for="skill">GitHub Link for Project</label>
-                              </div>
-                            </div>
-                            <div class="row">
-                              <div class="input-field col s12 ">
-                                {% render_field form.project3_description class="validate" %}
-                                <label for="skill">A small description about the project 3</label>
-                              </div>
-                            </div>
-
-                            
-
-                            <a class="previous action-button waves-effect waves-light btn" style="left: 36%;">Previous</a>
-                            <button class="btn waves-effect waves-light" type="submit" name="action" style="left: 36%;"><i class="material-icons right">send</i>Submit
-                              
-                            </button>
-                            
-
-                          </fieldset>
-                        </form>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <br><br>
-      </div>
-    </div>
-
-
-
-
-    <!--  Scripts-->
-    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
-    <script src="{% static 'js/materialize.js' %}"></script>
-    <script src="{% static 'js/init.js' %}"></script>
-    <script type="text/javascript" src="{% static 'js/form.js' %}"></script>
-    <script type="text/javascript">
-      $('.button-collapse').sideNav();
-    </script>
-</body>    
+</body>
 {% endblock %}
