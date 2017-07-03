@@ -39,7 +39,10 @@ $(function() {
         required: "Please enter password",
         minlength:"Password should be minimum 8 characters long"
       },
-      email: "Invalid email address",
+      email:{
+        required: "Please enter email",        
+        email: "Invalid email address"
+      },
       password2: {
         required: "Please enter password",
         minlength:"Password should be minimum 8 characters long"
