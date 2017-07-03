@@ -952,4 +952,7 @@ br.fix1{
 
 	body.is-ie #wrapper {
 		height: 100%;
+	}
+	label{
+		color: red;
 	}		

@@ -4,13 +4,13 @@
 {% load i18n %}
 {% block title %}HoxNox-Enter Details{% endblock %}
 {% block extend_head %}
-	<meta charset="utf-8" />
-	<link rel="stylesheet" href="{% static 'css/register.css' %}" />
-	<style type="text/css">
-			form.myform fieldset {
+<meta charset="utf-8" />
+<link rel="stylesheet" href="{% static 'css/register.css' %}" />
+<style type="text/css">
+	form.myform fieldset {
 		display: none;
 	}
-	</style>
+</style>
 {% endblock %}
 {% block content %}
 <body class="is-loading">
@@ -18,8 +18,8 @@
 	<div id="wrapper">
 
 		<!-- Main -->
-		<form method="post" class="myform">
-                      {% csrf_token %}
+		<form method="post" class="myform" name="details">
+			{% csrf_token %}
 			<fieldset style="display: block;">
 				<section id="main">
 					<header>
@@ -33,10 +33,10 @@
 					</div>
 					<br>
 					<div class="field">
-					{% render_field form.last_name placeholder="Last Name" %}
+						{% render_field form.last_name placeholder="Last Name" %}
 					</div><br>
 					<div class="field">
-					{% render_field form.date_of_birth placeholder="Date of Birth (enter in YYYY-MM-DD format) *" %}
+						{% render_field form.date_of_birth placeholder="Date of Birth (enter in YYYY-MM-DD format) *" %}
 					</div>
 					<hr />
 					<ul class="actions">
@@ -92,23 +92,23 @@
 					</header>
 					<hr />
 					<div class="field">
-                                {% render_field form.skill1 placeholder="Skill 1 *" %}
-                            </div><br>
+						{% render_field form.skill1 placeholder="Skill 1 *" %}
+					</div><br>
 					<div class="field">
-                                {% render_field form.skill2 placeholder="Skill 2 *" %}
-                            </div><br>
+						{% render_field form.skill2 placeholder="Skill 2 *" %}
+					</div><br>
 					<div class="field">
-                                {% render_field form.skill3 placeholder="Skill 3" %}
-                            </div><br>
+						{% render_field form.skill3 placeholder="Skill 3" %}
+					</div><br>
 					<div class="field">
-                                {% render_field form.skill4 placeholder="Skill 4" %}
-                            </div><br>
+						{% render_field form.skill4 placeholder="Skill 4" %}
+					</div><br>
 					<div class="field">
-                                {% render_field form.skill5 placeholder="Skill 5" %}
-                            </div><br>
+						{% render_field form.skill5 placeholder="Skill 5" %}
+					</div><br>
 					<div class="field">
-                                {% render_field form.skill6 placeholder="Skill 6" %}
-                            </div>
+						{% render_field form.skill6 placeholder="Skill 6" %}
+					</div>
 					<hr />
 					<ul class="actions">
 						<a class="previous button">Previous</a>
@@ -153,31 +153,31 @@
 					</header>
 					<hr />
 					<div class="field">
-                                {% render_field form.project1_name placeholder="Project 1 Name *" %}
+						{% render_field form.project1_name placeholder="Project 1 Name *" %}
 					</div><br>
 					<div class="field">
-                                {% render_field form.project1_url placeholder="GitHub Link for Project *" %}
+						{% render_field form.project1_url placeholder="GitHub Link for Project *" %}
 					</div><br>
 					<div class="field">
-                                {% render_field form.project1_description placeholder="A small description about the project 1 *" %}
+						{% render_field form.project1_description placeholder="A small description about the project 1 *" %}
 					</div><br>
 					<div class="field">
-                                {% render_field form.project2_name placeholder="Project 2 Name" %}
+						{% render_field form.project2_name placeholder="Project 2 Name" %}
 					</div><br>
 					<div class="field">
-                                {% render_field form.project2_url placeholder="GitHub Link for Project" %}
+						{% render_field form.project2_url placeholder="GitHub Link for Project" %}
 					</div><br>
 					<div class="field">
-                                {% render_field form.project2_description placeholder="A small description about the project 2" %}
+						{% render_field form.project2_description placeholder="A small description about the project 2" %}
 					</div><br>
 					<div class="field">
-                                {% render_field form.project3_name placeholder="Project 3 Name" %}
+						{% render_field form.project3_name placeholder="Project 3 Name" %}
 					</div><br>
 					<div class="field">
-                                {% render_field form.project3_url placeholder="GitHub Link for Project" %}
+						{% render_field form.project3_url placeholder="GitHub Link for Project" %}
 					</div><br>
 					<div class="field">
-                                {% render_field form.project3_description placeholder="A small description about the project 3" %}
+						{% render_field form.project3_description placeholder="A small description about the project 3" %}
 					</div>
 					<hr />
 					<ul class="actions">
@@ -199,7 +199,9 @@
 
 	<!-- Scripts -->
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script type="text/javascript" src="{% static 'js/jquery.validate.min.js' %}"></script>
 	<script type="text/javascript" src="{% static 'js/details.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/validation.js' %}"></script>
 	<!--[if lte IE 8]><script src="assets/js/respond.min.js"></script><![endif]-->
 
 	<script>
