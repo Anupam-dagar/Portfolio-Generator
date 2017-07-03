@@ -96,8 +96,8 @@
                         {% if user.is_authenticated %}
                         <p class="intro-text">Welcome {{request.user}}, start by entering your details.
                             <br></p>
-                            <a href="{% url 'Portfolio_detail' %}"><button class="btn btn-danger btn-lg">Create Portfolio</button></a>
-                            <a href="{% url 'View_all' %}"><button class="btn btn-danger btn-lg">View Portfolios</button></a>
+                            <a href="{% url 'Portfolio_detail' %}"><button class="btn btn-danger btn-lg">Create Portfolio</button></a><br><br>
+                            <a href="{% url 'View_all' %}"><button class="btn btn-danger btn-lg" style="width: 12em;">View Portfolios</button></a>
                             {% else %}
                             <p class="intro-text">A free, simple to use, quick portfolio generator.
                                 <br></p>
@@ -230,6 +230,7 @@
                     <footer>
                         <div class="container text-center">
                             <p>Created with <i class="fa fa-heart-o" aria-hidden="true"></i> by Anupam Dagar</p>
+                        <div class="container text-right" style="float: right;"><a href="{% url 'privacypolicy' %}">Privacy Policy</a></div>
                         </div>
                     </footer>
 

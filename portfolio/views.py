@@ -63,4 +63,7 @@ def editform(request, username, pk):
 			form =  PortfolioForm(instance=instance)
 		return render(request, 'portfolio/details.html',{'form':form})
 	else:
-		return render(request, 'portfolio/home.html',{})				
+		return render(request, 'portfolio/home.html',{})
+
+def privacypolicy(request):
+	return render(request, 'portfolio/privacypolicy.html', {})						

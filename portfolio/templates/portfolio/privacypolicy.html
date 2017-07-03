@@ -1,0 +1,155 @@
+{% extends 'portfolio/base.html' %}
+{% load staticfiles %}
+{% load widget_tweaks %}
+{% block title %}HoxNox-Privacy Policy{% endblock %}
+{% block extend_head %}
+
+
+<link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+<link href="{% static 'css/home.css' %}" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="{% static 'css/socialicons.css' %}">
+{% endblock %}
+{%block content %}
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+    <div class="hameid-loader-overlay" style="width: 100%;
+    height: 100%;
+    background: url({% static 'img/preloader.gif' %}) center no-repeat #FFF;
+    background-color: #E93978;
+    z-index: 99999;
+    position: fixed;"></div>
+    <!-- Navigation -->
+    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                    Menu <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand page-scroll" href="#page-top">
+                    <img src="{% static 'img/logonav.png' %}" style="width: 65%;">
+                </a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+                <ul class="nav navbar-nav">
+                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="/">Home</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#contact">Contact</a>
+                    </li>
+                    
+                    {% if user.is_authenticated %}
+
+                    <li>
+                        <a class="page-scroll" href="/">{{request.user}}</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="{% url 'View_all' %}">Your Portfolios</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="{% url 'auth_logout' %}?next=/">Logout</a>
+                    </li>
+
+                    {% else %}
+                    
+                    <li>
+                        <a class="page-scroll" href="{% url 'auth_login' %}">Login</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="{% url 'registration_register' %}">Signup</a>
+                    </li>
+
+                    {% endif %}
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Intro Header -->
+    
+
+    <!-- About Section -->
+    <section id="about" class="container content-section text-center">
+        <div class="row">
+            <div class="col-lg-12 ">
+                <h1>PRIVACY POLICY</h1>
+                <p>This Privacy Policy applies to the <a href="/">hoxnox.herokuapp.com</a></p>
+                <p class="lead" style="text-align: justify;">HoxNox recognises the importance of maintaining your privacy. We value your privacy and appreciate your trust in us. This Policy describes how we treat user information we collect on hoxnox.herokuapp.com and other offline sources. This Privacy Policy applies to current and former visitors to our website and to our online customers. By visiting and/or using our website, you agree to this Privacy Policy.</p>
+                <p>HoxNox is a an open source project.</p>
+                <h2>Information we collect</h2>
+                <ul>
+                <li class="lead" style="text-align: justify;"><span style="color: #3BDCA3;">Contact information:</span> We might collect your name, email, mobile number, phone number, street, city, state, pincode, country and ip address.</li>
+                    <li class="lead" style="text-align: justify;"><span style="color: #3BDCA3;">Payment and billing information:</span> We don’t collect your billing name, billing address and payment method when you buy a ticket. We NEVER collect your credit card number or credit card expiry date or other details pertaining to your credit card on our website.</li>
+                    <li class="lead" style="text-align: justify;"><span style="color: #3BDCA3;"> Information you post:</span> We collect information you post in a private space on our website.
+                    Demographic information. We don’t collect any demographic information about you, events you like, events you intend to participate in, tickets you buy, or any other information provided by your during the use of our website.</li>
+                   <li class="lead" style="text-align: justify;"> <span style="color: #3BDCA3;"> Other information:</span> If you use our website, we may collect information about your IP address and the browser you're using. We might look at what site you came from, duration of time spent on our website, pages accessed or what site you visit when you leave us. We might also collect the type of mobile device you are using, or the version of the operating system your computer or device is running.</li></ul>
+                    <h2>We collect information in different ways</h2>
+                    <ul>
+                    <li class="lead" style="text-align: justify;">We collect information directly from you. We collect information directly from you when you register on the site and when you fill the form on the website. We also collect information if you post a feedback on our websites or ask us a question through phone or email.</li>
+                   <li class="lead" style="text-align: justify;"> We collect information from you passively. We use tracking tools like Google Analytics, Google Webmaster, browser cookies and web beacons for collecting information about your usage of our website.</li>
+                 <li class="lead" style="text-align: justify;">   We get information about you from third parties. For example, if you use an integrated social media feature on our websites. The third-party social media site will give us certain information about you. This could include your name and email address.</li></ul>
+                 <h2>PASSWORDS</h2>
+                 <p class="lead" style="text-align: justify;">Passwords are not stored by the website no matter which form of login is used(registration or login via google or facebook).It's the sole responsibilty of the user to remember username and password.In no case password can be recovered if the user forgets the registered e-mail address.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="container content-section text-center">
+            <div class="row" style="margin-top: -14%;">
+                <div class="col-lg-9 col-lg-offset-2">
+                    <h2>Contact ME</h2>
+                    <p>Want to provide some feedback on HoxNox, give suggestions for new features, or to just say hello!</p>
+                    <p>Email me at <a href="mailto:dagaranupam@gmail.com">dagaranupam@gmail.com</a>
+                    </p>
+                    <ul class="list-inline banner-social-buttons">
+                        <li>
+                            <a href="https://twitter.com/anupam_dagar" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/Anupam-dagar" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
+                        </li>
+                        <li>
+                            <a href="https://www,facebook.com/invincible.anupam" class="btn btn-default btn-lg"><i class="fa fa-facebook fa-fw"></i> <span class="network-name">Facebook</span></a>
+                        </li>
+                        <li>
+                            <a href="https://www,facebook.com/invincible.anupam" class="btn btn-default btn-lg"><i class="fa fa-linkedin fa-fw"></i> <span class="network-name">LinkedIn</span></a>
+                        </li>
+                        <li>
+                            <a href="http://anupamdagar.me/" class="btn btn-default btn-lg"><i class="fa fa-home fa-fw"></i> <span class="network-name">Website</span></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <div class="container text-center">
+                <p>Created with <i class="fa fa-heart-o" aria-hidden="true"></i> by Anupam Dagar</p>
+            </div>
+        </footer>
+
+        <!-- jQuery -->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+        <!-- Bootstrap Core JavaScript -->
+        <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <!-- Plugin JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+        <script>
+            jQuery(window).load(function(){
+                jQuery(".hameid-loader-overlay").fadeOut(500);
+            });
+        </script>
+        <!-- Theme JavaScript -->
+        <script src="{% static 'js/home.js' %}"></script>
+    </body>
+    {% endblock %}
