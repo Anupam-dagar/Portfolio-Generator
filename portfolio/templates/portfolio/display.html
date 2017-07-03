@@ -14,6 +14,12 @@
 {% endblock %}			
 {% block content %}
 <body>
+<div class="hameid-loader-overlay" style="width: 100%;
+    height: 100%;
+    background: url({% static 'img/preloader.gif' %}) center no-repeat #FFF;
+    background-color: #E93978;
+    z-index: 99999;
+    position: fixed;"></div>
 <!-- Header -->
 <section id="header">
 	<header>
@@ -173,5 +179,11 @@
 	</section>
 
 </div>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script>
+    jQuery(window).load(function(){
+        jQuery(".hameid-loader-overlay").fadeOut(500);
+    });
+</script>
 </body>
 {% endblock %}

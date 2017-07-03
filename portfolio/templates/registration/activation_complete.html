@@ -7,11 +7,16 @@
 <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
 <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
 <link href="{% static 'css/home.css' %}" rel="stylesheet">
-<meta http-equiv="refresh" content="2;url={% url 'auth_login' %}" />
+<meta http-equiv="refresh" content="4;url={% url 'auth_login' %}" />
 {% endblock %}
 {% block content %}
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
-
+<div class="hameid-loader-overlay" style="width: 100%;
+    height: 100%;
+    background: url({% static 'img/preloader.gif' %}) center no-repeat #FFF;
+    background-color: #E93978;
+    z-index: 99999;
+    position: fixed;"></div>
 	<!-- Navigation -->
 	<!-- Intro Header -->
 	<header class="intro">
@@ -48,6 +53,10 @@
 
 		<!-- Theme JavaScript -->
 		<script src="{% static 'js/home.js' %}"></script>
-
+		<script>
+    jQuery(window).load(function(){
+        jQuery(".hameid-loader-overlay").fadeOut(500);
+    });
+</script>
 	</body>
 	{% endblock %}

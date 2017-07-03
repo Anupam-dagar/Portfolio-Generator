@@ -1,8 +1,64 @@
-{% extends "portfolio/base.html" %}
-{% load i18n %}
+{% extends 'portfolio/base.html' %}
+{% load staticfiles %}
+{% block title %}HoxNox-Activation Complete{% endblock %}
+{% block extend_head %}
 
-{% block content %}
 
-<p>{% trans "Account activation failed" %}</p>
-
+<link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+<link href="{% static 'css/home.css' %}" rel="stylesheet">
+<meta http-equiv="refresh" content="4;url={% url 'auth_login' %}" />
 {% endblock %}
+{% block content %}
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+<div class="hameid-loader-overlay" style="width: 100%;
+    height: 100%;
+    background: url({% static 'img/preloader.gif' %}) center no-repeat #FFF;
+    background-color: #E93978;
+    z-index: 99999;
+    position: fixed;"></div>
+	<!-- Navigation -->
+	<!-- Intro Header -->
+	<header class="intro">
+		<div class="intro-body">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-10 col-md-offset-1">
+						<h1 class="brand-heading" style="font-size: 7em;">Account Activation Failed</h1>
+						<p class="intro-text">Please try again.
+							<br></p>
+						<p class="intro-text">You will be redirected automatically, if not, use the button below.
+							<br></p>
+							<a href="{% url 'auth_login' %}"><button class="btn btn-danger btn-lg">Login</button></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+
+
+
+
+		<!-- Footer -->
+		<footer>
+			<div class="container text-center">
+				<p>Created with <i class="fa fa-heart-o" aria-hidden="true"></i> by Anupam Dagar</p>
+			</div>
+		</footer>
+
+		<!-- jQuery -->
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+		<!-- Bootstrap Core JavaScript -->
+		<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<!-- Plugin JavaScript -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+
+		<!-- Theme JavaScript -->
+		<script src="{% static 'js/home.js' %}"></script>
+		<script>
+    jQuery(window).load(function(){
+        jQuery(".hameid-loader-overlay").fadeOut(500);
+    });
+</script>
+	</body>
+	{% endblock %}

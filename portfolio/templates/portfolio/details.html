@@ -14,7 +14,6 @@
 {% endblock %}
 {% block content %}
 <body class="is-loading">
-
 	<!-- Wrapper -->
 	<div id="wrapper">
 
@@ -202,12 +201,12 @@
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script type="text/javascript" src="{% static 'js/details.js' %}"></script>
 	<!--[if lte IE 8]><script src="assets/js/respond.min.js"></script><![endif]-->
+
 	<script>
 		if ('addEventListener' in window) {
 			window.addEventListener('load', function() { document.body.className = document.body.className.replace(/\bis-loading\b/, ''); });
 			document.body.className += (navigator.userAgent.match(/(MSIE|rv:11\.0)/) ? ' is-ie' : '');
 		}
 	</script>
-
 </body>
 {% endblock %}
