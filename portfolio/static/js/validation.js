@@ -1,13 +1,25 @@
 $(function() {
   // Initialize form validation on the registration form.
   // It has the name attribute "registration"
+  $.validator.addMethod(
+        "regex",
+        function(value, element, regexp) {
+            var re = new RegExp(regexp);
+            return this.optional(element) || re.test(value);
+        },
+        "Please check your input."
+);
   $("form[name='details']").validate({
     // Specify validation rules
     rules: {
       // The key name on the left side is the name attribute
       // of an input field. Validation rules are defined
       // on the right side
-      first_name: "required",
+      password1: {
+        required: true,
+        regex: /(?:[A-Z].*[0-9])|(?:[0-9].*[A-Z])/
+      },
+      firstname: "required",
       email_address: {
         required: true,
         // Specify that email should be validated
@@ -38,7 +50,10 @@ $(function() {
     },
     // Specify validation error messages
     messages: {
-      firstname: "Please enter your firstname",
+      firstname: {
+        required: "error",
+        regex: "regex error"
+      },
       password: {
         required: "Please provide a password",
         minlength: "Your password must be at least 5 characters long"

@@ -25,14 +25,8 @@ def Portfolio_detail(request):
 		return render(request,'portfolio/home.html',{})
 
 def Portfolio_display(request, username, pk):
-	if request.user.is_authenticated():
-		detail = get_object_or_404(Portfolio, user__username=username, pk=pk)
-		if request.user==detail.user:
-			return render(request, 'portfolio/display.html', {'detail':detail})
-		else:
-			raise Http404
-	else:
-		return render(request,'portfolio/home.html',{})
+	detail = get_object_or_404(Portfolio, user__username=username, pk=pk)
+	return render(request, 'portfolio/display.html', {'detail':detail})
 
 def View_all(request):
 	if request.user.is_authenticated():
@@ -57,13 +51,16 @@ def home(request):
 
 def editform(request, username, pk):
 	instance = get_object_or_404(Portfolio, user__username=username, pk=pk)
-	if request.method=="POST":
-		form=PortfolioForm(request.POST, instance=instance)
-		if form.is_valid():
-			instance =  form.save(commit=False)
-			instance.user = request.user
-			instance.save()
-			return redirect('Portfolio_display', username=instance.user, pk=instance.pk)
+	if request.user == instance.user:
+		if request.method=="POST":
+			form=PortfolioForm(request.POST, instance=instance)
+			if form.is_valid():
+				instance =  form.save(commit=False)
+				instance.user = request.user
+				instance.save()
+				return redirect('Portfolio_display', username=instance.user, pk=instance.pk)
+		else:
+			form =  PortfolioForm(instance=instance)
+		return render(request, 'portfolio/details.html',{'form':form})
 	else:
-		form =  PortfolioForm(instance=instance)
-	return render(request, 'portfolio/details.html',{'form':form})			
+		return render(request, 'portfolio/home.html',{})				
