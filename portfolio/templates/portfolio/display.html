@@ -4,7 +4,8 @@
 {% block title %}{{detail.first_name}}'s Profile{% endblock %}
 {% block extend_head %}
 <link rel="stylesheet" href="{% static 'css/display.css' %}" />
-<link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet"> 
+<link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="{% static 'css/popup.css' %}" /> 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script src="{% static 'js/jquery.scrollzer.min.js' %}"></script>
 <script src="{% static 'js/jquery.scrolly.min.js' %}"></script>
@@ -179,11 +180,19 @@
 	</section>
 
 </div>
+<div id="boxes">
+  <div id="dialog" class="window">
+    Your Content Goes Here
+    <div id="popupfoot"> <a href="#" class="close agree">I agree</a> | <a class="agree"style="color:red;" href="#">I do not agree</a> </div>
+  </div>
+  <div id="mask"></div>
+</div>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script>
     jQuery(window).load(function(){
         jQuery(".hameid-loader-overlay").fadeOut(500);
     });
 </script>
+<script type="text/javascript" src="{% static 'js/popup.js' %}"></script>
 </body>
 {% endblock %}
