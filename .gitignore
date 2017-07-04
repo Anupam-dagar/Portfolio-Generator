@@ -7,3 +7,4 @@ db.sqlite3
 .DS_Store
 myproject/sensitive_email_data.py
 myproject/secret_keys.py
+myproject/oauth_keys.py
