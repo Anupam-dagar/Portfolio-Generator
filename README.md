@@ -19,4 +19,4 @@ Always use virtual environment
 9. There is a template for oauth_keys(template).md which includes data to be included in oauth_keys.py
 10. Install the requirements from requirements.txt
 11. `pip install -r requirements.txt`
-
+12. Full documentation can be found [here](https://github.com/Anupam-dagar/Portfolio-Generator/wiki)
