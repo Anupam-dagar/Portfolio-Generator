@@ -1,11 +1,37 @@
+{% load static %}
+
 <html>
     <head>
         <title>Server Error</title>
-        <link rel="stylesheet" href="{% static 'css/500.css' %}" />
+        <meta http-equiv="Content-Type" content="text/html;" charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="HoxNox is a simple 3 step portfolio generator app.Create portfolio and share it with the world." />
+        <meta name="author" content="Anupam Dagar" />
+        <!-- for Facebook -->          
+        <meta property="og:url" content="https://hoxnox.herokuapp.com/" />
+        <meta property="og:url" content="http://hoxnox.herokuapp.com/" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="HoxNox" />
+        <meta property="og:description" content="Portfolios Made Easy" />
+        <meta property="og:image" content="https://raw.githubusercontent.com/Anupam-dagar/Portfolio-Generator/master/portfolio/static/img/ogbanner.png?token=AUMZLIxYH_FXLG4BaZ8bQWLBwaHKkyNlks5ZY7TfwA%3D%3D" />
+        <meta property="og:site_name" content="hoxnox" />
+        <!-- twitter -->
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:site" content="@anupam_dagar">
+        <meta name="twitter:title" content="HoxNox - Portfolios Made Easy">
+        <meta name="twitter:description" content="HoxNox is a simple 3 step portfolio generator app.Create portfolio and share it with the world.">
+        <meta name="twitter:creator" content="@anupam_dagar">
+        <meta name="twitter:image" content="https://raw.githubusercontent.com/Anupam-dagar/Portfolio-Generator/master/portfolio/static/img/hoxnoxgoogleapp.png?token=AUMZLDi5lImryQJrOdZSTtZoCeTc3GV2ks5ZY7VcwA%3D%3D">
+        <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="icon" type="image/png" href="{% static 'img/hoxnoxlogo1.png' %}">
+        <script type="text/javascript" src="//platform-api.sharethis.com/js/sharethis.js#property=5952669322c0b700127e3d5f&product=sticky-share-buttons"></script>
+        <link rel="stylesheet" href="{% static 'css/500.css' %}" type="text/css" />
         <link rel="stylesheet" href="{% static 'css/home.css' %}" />
         <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
         <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-         </head>
+    </head>
     <body>
         <!-- Navigation -->
     <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
