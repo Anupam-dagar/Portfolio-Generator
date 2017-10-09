@@ -66,4 +66,10 @@ def editform(request, username, pk):
 		return render(request, 'portfolio/home.html',{})
 
 def privacypolicy(request):
-	return render(request, 'portfolio/privacypolicy.html', {})						
+	return render(request, 'portfolio/privacypolicy.html', {})
+
+
+def handler500(request):
+    response = render(request, 'portfolio/500.html', {})
+    response.status_code = 500
+    return response

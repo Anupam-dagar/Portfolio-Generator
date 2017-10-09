@@ -15,6 +15,9 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
+
+handler500 = 'portfolio.views.handler500'
+
 urlpatterns = [
 	url(r'', include('portfolio.urls')),
     url(r'^adminsitehnox/', admin.site.urls),
