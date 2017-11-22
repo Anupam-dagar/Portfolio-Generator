@@ -1,0 +1,27 @@
+@import url("https://fonts.googleapis.com/css?family=Lato:400,400italic,700,700italic|Source+Code+Pro:400");
+
+body {
+    background-color: black;
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    position: absolute;
+}
+div{
+    top: 30%;
+    position: relative;
+    text-align: center;
+}
+li{
+    display: inline-table;
+}
+h1 {
+    font-size: 80px;
+    color: white;
+    font-family: 'Lato';
+}
+h2{
+    font-size: 20px;
+    color: grey;
+    font-family: 'Lato';
+    }

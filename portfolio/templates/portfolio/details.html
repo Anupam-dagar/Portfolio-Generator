@@ -6,6 +6,7 @@
 {% block extend_head %}
 <meta charset="utf-8" />
 <link rel="stylesheet" href="{% static 'css/register.css' %}" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker.css">
 <style type="text/css">
 	form.myform fieldset {
 		display: none;
@@ -204,16 +205,21 @@
 	<script type="text/javascript" src="{% static 'js/validation.js' %}"></script>
 	<!--[if lte IE 8]><script src="assets/js/respond.min.js"></script><![endif]-->
 
+	<!-- Bootstrap Core JavaScript -->
+	<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/js/bootstrap-datepicker.min.js"></script>
+	<script type="text/javascript">
+		$('#id_date_of_birth').datepicker({
+			format: "yyyy-mm-dd",
+			endDate: '+0d',
+        	autoclose: true
+		});
+	</script>
 	<script>
 		if ('addEventListener' in window) {
 			window.addEventListener('load', function() { document.body.className = document.body.className.replace(/\bis-loading\b/, ''); });
 			document.body.className += (navigator.userAgent.match(/(MSIE|rv:11\.0)/) ? ' is-ie' : '');
 		}
 	</script>
-	<script type="text/javascript">
-var infolinks_pid = 3019533;
-var infolinks_wsid = 0;
-</script>
-<script type="text/javascript" src="http://resources.infolinks.com/js/infolinks_main.js"></script>
 </body>
 {% endblock %}

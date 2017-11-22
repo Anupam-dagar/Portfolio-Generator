@@ -1,0 +1,109 @@
+{% load static %}
+
+<html>
+    <head>
+        <title>Internal Server Error - 500</title>
+        <meta http-equiv="Content-Type" content="text/html;" charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="HoxNox is a simple 3 step portfolio generator app.Create portfolio and share it with the world." />
+        <meta name="author" content="Anupam Dagar" />
+        <!-- for Facebook -->          
+        <meta property="og:url" content="https://hoxnox.herokuapp.com/" />
+        <meta property="og:url" content="http://hoxnox.herokuapp.com/" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="HoxNox" />
+        <meta property="og:description" content="Portfolios Made Easy" />
+        <meta property="og:image" content="https://raw.githubusercontent.com/Anupam-dagar/Portfolio-Generator/master/portfolio/static/img/ogbanner.png?token=AUMZLIxYH_FXLG4BaZ8bQWLBwaHKkyNlks5ZY7TfwA%3D%3D" />
+        <meta property="og:site_name" content="hoxnox" />
+        <!-- twitter -->
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:site" content="@anupam_dagar">
+        <meta name="twitter:title" content="HoxNox - Portfolios Made Easy">
+        <meta name="twitter:description" content="HoxNox is a simple 3 step portfolio generator app.Create portfolio and share it with the world.">
+        <meta name="twitter:creator" content="@anupam_dagar">
+        <meta name="twitter:image" content="https://raw.githubusercontent.com/Anupam-dagar/Portfolio-Generator/master/portfolio/static/img/hoxnoxgoogleapp.png?token=AUMZLDi5lImryQJrOdZSTtZoCeTc3GV2ks5ZY7VcwA%3D%3D">
+        <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="icon" type="image/png" href="{% static 'img/hoxnoxlogo1.png' %}">
+        <script type="text/javascript" src="//platform-api.sharethis.com/js/sharethis.js#property=5952669322c0b700127e3d5f&product=sticky-share-buttons"></script>
+        <link rel="stylesheet" href="{% static 'css/500.css' %}" type="text/css" />
+        <link rel="stylesheet" href="{% static 'css/home.css' %}" />
+        <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <!-- Navigation -->
+    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                    Menu <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand page-scroll" href="#page-top">
+                    <img src="{% static 'img/logonav.png' %}" style="width: 65%;">
+                </a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+                <ul class="nav navbar-nav">
+                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    {% if user.is_authenticated %}
+                    <li>
+                        <a class="page-scroll" href="#feedback">Feedback</a>
+                    </li>
+                    {% else %}
+                    <li>
+                        <a class="page-scroll" href="#get_started">Get Started</a>
+                    </li>
+                    {% endif %}
+                    <li>
+                        <a class="page-scroll" href="#about">About</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#download">Source Code</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#contact">Contact</a>
+                    </li>
+                    
+                    {% if user.is_authenticated %}
+
+                    <li>
+                        <a class="page-scroll" href="/">{{request.user}}</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="{% url 'View_all' %}">Your Portfolios</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="{% url 'auth_logout' %}?next=/">Logout</a>
+                    </li>
+
+                    {% else %}
+                    
+                    <li>
+                        <a class="page-scroll" href="{% url 'auth_login' %}">Login</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="{% url 'registration_register' %}">Signup</a>
+                    </li>
+
+                    {% endif %}
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+        <div>
+            <ul>
+                <li><h1>500</h1></li>
+                <li><h2>Internal Server Error</h2></li>
+            </ul>
+        </div>
+        </body>
+</html>
