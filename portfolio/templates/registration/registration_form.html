@@ -58,30 +58,8 @@
     </header>
     
     <hr />
-    <p>Username must include atleast one uppercase,<br> one lowercase and one digit.</p>
-    <form method="post" name="register">
-      {% csrf_token %}
-      {{form.errors}}
-      <div class="field" style="width: 45%;float: left;">
-        {% render_field form.username placeholder="Username" %}
-      </div>
-      <div class="field" style="width: 45%;float: right;">
-        {% render_field form.email placeholder="Email Address" %}
-      </div>
-      <div class="field">
-        {% render_field form.password1 placeholder="Create Password" %}
-      </div>
-      <div class="field">
-        {% render_field form.password2 placeholder="Confirm Password" %}
-      </div>
-      
-      
-      <ul class="actions">
-        <li><button type="submit" name="submit" value="{% trans 'Register' %}">Register</button></li>
-
-      </ul>
-    </form>
-    <h1 class="fix">Or Signup using:</h1><br class="fix1">
+    
+    <h1 class="fix">Signup using:</h1><br class="fix1">
     <div class="field"><a class="lead loginBtn loginBtn--facebook" href="{% url 'social:begin' 'facebook' %}" style="color: white;text-decoration: none;">Login with Facebook</a><br class="fix"><br class="fix">
       <a class="lead loginBtn loginBtn--google" href="{% url 'social:begin' 'google-oauth2' %}" style="color: white;text-decoration: none;padding-right: 2.4em;">Login with Google</a></div>
       <div class="field"><br>

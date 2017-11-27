@@ -928,7 +928,7 @@ br.fix1{
 		-ms-perspective: 1000px;
 		perspective: 1000px;
 		position: relative;
-		min-height: 100%;
+		min-height: 80%;
 		padding: 1.5em;
 		z-index: 2;
 	}
