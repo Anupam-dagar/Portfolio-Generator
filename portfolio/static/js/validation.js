@@ -1,13 +1,25 @@
 $(function() {
   // Initialize form validation on the registration form.
   // It has the name attribute "registration"
+  $.validator.addMethod(
+        "regex",
+        function(value, element, regexp) {
+            var re = new RegExp(regexp);
+            return this.optional(element) || re.test(value);
+        },
+        "Please check your input."
+);
   $("form[name='details']").validate({
     // Specify validation rules
     rules: {
       // The key name on the left side is the name attribute
       // of an input field. Validation rules are defined
       // on the right side
-      first_name: "required",
+      password1: {
+        required: true,
+        regex: /(?:[A-Z].*[0-9])|(?:[0-9].*[A-Z])/
+      },
+      firstname: "required",
       email_address: {
         required: true,
         // Specify that email should be validated
@@ -28,17 +40,20 @@ $(function() {
       skill1: "required",
       skill2: "required",
       facebook: "required",
-     // project1_name: "required",
-     // project1_url: {
-     //   required: true,
-     //   url: true
-     // },
-     // project1_description: "required",
+      project1_name: "required",
+      project1_url: {
+        required: true,
+        url: true
+      },
+      project1_description: "required",
       blog: "url"
     },
     // Specify validation error messages
     messages: {
-      firstname: "Please enter your firstname",
+      firstname: {
+        required: "error",
+        regex: "regex error"
+      },
       password: {
         required: "Please provide a password",
         minlength: "Your password must be at least 5 characters long"
@@ -54,11 +69,11 @@ $(function() {
       skill1:"Please enter your skill1",
       skill2:"Please enter your skill2",
       facebook:"Please enter your facebook username",
-   //   project1_name:"Please enter name of project1",
-   //   project1_url: {
-   //     required: "Please enter GitHub Link for the project",
-    //    url: "Please enter a valid url"
-   //   },
+      project1_name:"Please enter name of project1",
+      project1_url: {
+        required: "Please enter GitHub Link for the project",
+        url: "Please enter a valid url"
+      },
       blog: "Please enter a valid url"
     },
     // Make sure the form is submitted to the destination defined
