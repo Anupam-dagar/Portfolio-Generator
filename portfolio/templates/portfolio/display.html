@@ -109,6 +109,7 @@
 				<h3>Projects</h3>
 				<p>Projects that I have worked on. </p>
 				<div class="features">
+					{% if detail.project1_name and detail.project1_description and detail.project1_url %}					
 					<article>
 						<a href="{{ detail.project1_url }}" class="image"><img src="{% static 'img/project1.jpg' %}" alt="" /></a>
 						<div class="inner">
@@ -117,6 +118,7 @@
 							<p><a href="{{ detail.project1_url }}">View Source Code <i class="fa fa-github fa-2x"></i></a></p>
 						</div>
 					</article>
+					{% endif %}
 					{% if detail.project2_name and detail.project2_description and detail.project2_url %}
 					<article>
 						<a href="{{ detail.project2_url }}" class="image"><img src="{% static 'img/project2.jpg' %}" alt="" /></a>
