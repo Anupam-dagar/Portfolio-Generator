@@ -29,11 +29,11 @@ $(function() {
       skill2: "required",
       facebook: "required",
      // project1_name: "required",
-     // project1_url: {
-     //   required: true,
-     //   url: true
-     // },
-     // project1_description: "required",
+    //  project1_url: {
+    //    required: true,
+    //    url: true
+   //   },
+   //   project1_description: "required",
       blog: "url"
     },
     // Specify validation error messages
@@ -57,7 +57,7 @@ $(function() {
    //   project1_name:"Please enter name of project1",
    //   project1_url: {
    //     required: "Please enter GitHub Link for the project",
-    //    url: "Please enter a valid url"
+   //     url: "Please enter a valid url"
    //   },
       blog: "Please enter a valid url"
     },
