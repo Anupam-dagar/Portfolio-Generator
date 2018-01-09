@@ -19,7 +19,7 @@ $(function() {
         required: true,
         regex: /(?:[A-Z].*[0-9])|(?:[0-9].*[A-Z])/
       },
-      firstname: "required",
+      first_name: "required",
       email_address: {
         required: true,
         // Specify that email should be validated
@@ -42,15 +42,15 @@ $(function() {
       facebook: "required",
       project1_name: "required",
       project1_url: {
-        required: true,
-        url: true
+        required: false,
+        url: false
       },
-      project1_description: "required",
+      project1_description: "false",
       blog: "url"
     },
     // Specify validation error messages
     messages: {
-      firstname: {
+      first_name: {
         required: "error",
         regex: "regex error"
       },

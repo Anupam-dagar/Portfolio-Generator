@@ -3,7 +3,7 @@ from __future__ import unicode_literals
 from django.db import models
 from datetime import date
 from django.conf import settings
-import datetime 
+import datetime
 class Portfolio(models.Model):
 	user = models.ForeignKey(settings.AUTH_USER_MODEL)
 	first_name = models.CharField(max_length=200)
@@ -24,9 +24,9 @@ class Portfolio(models.Model):
 	twitter = models.CharField(max_length=500, default="", blank=True)
 	linkedin = models.CharField(max_length=500, default="", blank=True)
 	blog = models.CharField(max_length=500, default="", blank=True)
-	project1_name = models.CharField(max_length=500, default="")
-	project1_url = models.CharField(max_length=500, default="")
-	project1_description = models.CharField(max_length=300, default="")
+	project1_name = models.CharField(max_length=500, default="", blank=True)
+	project1_url = models.CharField(max_length=500, default="", blank=True)
+	project1_description = models.CharField(max_length=300, default="", blank=True)
 	project2_name = models.CharField(max_length=500, default="", blank=True)
 	project2_url = models.CharField(max_length=500, default="", blank=True)
 	project2_description = models.CharField(max_length=300, default="", blank=True)	
@@ -36,7 +36,7 @@ class Portfolio(models.Model):
 	date_created = models.DateField(auto_now_add=True)
 	time_created = models.TimeField(auto_now_add=True)
 	updated_on = models.DateField(auto_now=True)
-	updated_at = models.TimeField(auto_now=True)	
+	updated_at = models.TimeField(auto_now=True)
 
 	def __str__(self):
 		return self.first_name	+ " " + self.last_name

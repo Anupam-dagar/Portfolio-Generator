@@ -11,7 +11,7 @@
 <script src="{% static 'js/skel.min.js' %}"></script>
 <script src="{% static 'js/util.js' %}"></script>
 <script src="{% static 'js/display.js' %}"></script>
-{% endblock %}			
+{% endblock %}
 {% block content %}
 <body>
 <div class="hameid-loader-overlay" style="width: 100%;
@@ -35,7 +35,9 @@
 		<ul>
 			<li><a href="#one" class="active">About</a></li>
 			<li><a href="#two">Skills</a></li>
+      {% if detail.project1_name and detail.project1_description and detail.project1_url %}
 			<li><a href="#three">Projects</a></li>
+      {% endif %}
 			<li><a href="#four">Contact</a></li>
 		</ul>
 		<a href="/">HOME</a>
@@ -67,7 +69,7 @@
 	<div id="main">
 	<section id="banners">
 
-      
+
       <h2 id="overtext" style="font-family: 'Fredoka One', cursive;text-transform: uppercase;color: white;">{{ detail.first_name }} {{ detail.last_name }}</h2>
 
 		</section>
@@ -106,6 +108,7 @@
 		<!-- Three -->
 		<section id="three">
 			<div class="container">
+        {% if detail.project1_name and detail.project1_description and detail.project1_url %}
 				<h3>Projects</h3>
 				<p>Projects that I have worked on. </p>
 				<div class="features">
@@ -117,6 +120,7 @@
 							<p><a href="{{ detail.project1_url }}">View Source Code <i class="fa fa-github fa-2x"></i></a></p>
 						</div>
 					</article>
+          {% endif %}
 					{% if detail.project2_name and detail.project2_description and detail.project2_url %}
 					<article>
 						<a href="{{ detail.project2_url }}" class="image"><img src="{% static 'img/project2.jpg' %}" alt="" /></a>
