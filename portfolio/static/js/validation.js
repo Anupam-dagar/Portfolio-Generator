@@ -42,15 +42,15 @@ $(function() {
       facebook: "required",
       project1_name: "required",
       project1_url: {
-        required: true,
-        url: true
+        required: false,
+        url: false
       },
-      project1_description: "required",
+      project1_description: "false",
       blog: "url"
     },
     // Specify validation error messages
     messages: {
-      firstname: {
+      first_name: {
         required: "error",
         regex: "regex error"
       },
