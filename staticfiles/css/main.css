@@ -1,0 +1,1093 @@
+
+@import url("fonts.css");
+@import url("font-awesome/css/font-awesome.min.css");
+
+
+/** 
+ * ===================================================================
+ * 02. base style overrides - (_document-setup.scss)
+ *
+ * ------------------------------------------------------------------- 
+ */
+
+html {
+	font-size: 10px;
+}
+
+@media only screen and (max-width:1024px) {
+	html {
+		font-size: 9.375px;
+	}
+}
+@media only screen and (max-width:768px) {
+	html {
+		font-size: 10px;
+	}
+}
+@media only screen and (max-width:400px) {
+	html {
+		font-size: 9.375px;
+	}
+}
+
+html, body {
+	height: 100%;
+}
+body {
+	background: #151515;
+	font-family: "roboto-regular", sans-serif;
+	font-size: 1.6rem;
+	line-height: 3rem;
+	color: #6e6e6e;
+}
+
+
+/**
+ * links - (_document-setup.scss)
+ * ------------------------------------------------------------------- 
+ */
+
+a, a:visited {
+	color: #FFFFFF;
+	-moz-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	-webkit-transition: all 0.3s ease-in-out;
+	-ms-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+}
+a:hover, a:focus {
+	color: #c25d02;
+}
+
+/** 
+ * ===================================================================
+ * 03. typography & general theme styles - (_document-setup.scss)
+ *
+ * ------------------------------------------------------------------- 
+ */
+
+h1, h2, h3, h4, h5, h6, .h01, .h02, .h03, .h04, .h05, .h06 {
+	font-family: "roboto-bold", sans-serif;
+	color: #FFFFFF;
+	font-style: normal;
+	text-rendering: optimizeLegibility;
+	margin-bottom: 2.1rem;
+}
+h3, .h03, h4, .h04 {
+	margin-bottom: 1.8rem;
+}
+h5, .h05, h6, .h06 {
+	font-family: "roboto-black";
+	margin-bottom: 1.2rem;
+}
+h1, .h01 {
+	font-size: 3.1rem;
+	line-height: 1.35;
+	letter-spacing: -.1rem;
+}
+@media only screen and (max-width:600px) {
+	h1, .h01 {
+		font-size: 2.6rem;
+		letter-spacing: -.07rem;
+	}
+}
+h2, .h02 {
+	font-size: 2.4rem;
+	line-height: 1.25;
+}
+h3, .h03 {
+	font-size: 2rem;
+	line-height: 1.5;
+}
+h4, .h04 {
+	font-size: 1.7rem;
+	line-height: 1.76;
+}
+h5, .h05 {
+	font-size: 1.4rem;
+	line-height: 1.7;
+	text-transform: uppercase;
+	letter-spacing: .15rem;
+}
+h6, .h06 {
+	font-size: 1.3rem;
+	line-height: 1.85;
+	text-transform: uppercase;
+	letter-spacing: .15rem;
+}
+p img {
+	margin: 0;
+}
+p.lead {
+	font-family: "roboto-light", serif;
+	font-size: 1.8rem;
+	line-height: 1.8;
+	color: #6e6e6e;
+}
+@media only screen and (max-width:768px) {
+	p.lead {
+		font-size: 1.7rem;
+	}
+}
+em, i, strong, b {
+	font-size: 1.6rem;
+	line-height: 3rem;
+	font-style: normal;
+	font-weight: normal;
+}
+em, i {
+	font-family: "roboto-thin", serif;
+}
+strong, b {
+	font-family: "roboto-bold", serif;
+}
+small {
+	font-size: 1.1rem;
+	line-height: inherit;
+}
+blockquote {
+	margin: 3rem 0;
+	padding-left: 4rem;
+	position: relative;
+}
+blockquote:before {
+	content: "\201C";
+	font-size: 8rem;
+	line-height: 0px;
+	margin: 0;
+	color: #333;
+	font-family: arial, sans-serif;
+	position: absolute;
+	top: 3rem;
+	left: 0;
+}
+blockquote p {
+	font-family: georgia, serif;
+	font-style: italic;
+	padding: 0;
+	font-size: 1.9rem;
+	line-height: 1.75;
+}
+blockquote cite {
+	display: block;
+	font-size: 1.2rem;
+	font-style: normal;
+	line-height: 1.65;
+}
+blockquote cite:before {
+	content: "\2014 \0020";
+}
+blockquote cite a, blockquote cite a:visited {
+	color: #888888;
+	border: none;
+}
+abbr {
+	font-family: "roboto-bold", serif;
+	font-variant: small-caps;
+	text-transform: lowercase;
+	letter-spacing: .05rem;
+	color: #888888;
+}
+var, kbd, samp, code, pre {
+	font-family: Consolas, "Andale Mono", Courier, "Courier New", monospace;
+}
+pre {
+	padding: 2.4rem 3rem 3rem;
+	background: #F1F1F1;
+}
+code {
+	font-size: 1.4rem;
+	margin: 0 .2rem;
+	padding: .3rem .6rem;
+	white-space: nowrap;
+	background: #F1F1F1;
+	border: 1px solid #E1E1E1;
+	border-radius: 3px;
+}
+pre > code {
+	display: block;
+	white-space: pre;
+	line-height: 2;
+	padding: 0;
+	margin: 0;
+}
+pre.prettyprint > code {
+	border: none;
+}
+del {
+	text-decoration: line-through;
+}
+abbr[title], dfn[title] {
+	border-bottom: 1px dotted;
+	cursor: help;
+}
+mark {
+	background: #FFF49B;
+	color: #000;
+}
+hr {
+	border: solid #d2d2d2;
+	border-width: 1px 0 0;
+	clear: both;
+	margin: 2.4rem 0 1.5rem;
+	height: 0;
+}
+
+==============================================================
+ * 07. off-canvas menu - (_layout.scss)
+ *
+ * ------------------------------------------------------------------- 
+ 
+
+#menu-nav-wrap {
+	background: #111111;
+	color: rgba(255, 255, 255, 0.3);
+	font-family: "roboto-regular", sans-serif;
+	font-size: 1.5rem;
+	line-height: 2.7rem;
+	padding: 3.6rem 3rem;
+	height: 100%;
+	width: 260px;
+	position: fixed;
+	right: 0;
+	top: 0;
+	visibility: hidden;
+	z-index: 500;
+	overflow-y: auto;
+
+	-webkit-transform: translateZ(0);
+	-webkit-backface-visibility: hidden;
+
+	-webkit-transition: -webkit-transform .4s 0s, visibility 0s .4s;
+	-moz-transition: -moz-transform .4s 0s, visibility 0s .4s;
+	transition: transform .4s 0s, visibility 0s .4s;
+
+	-webkit-transform: translateX(80px);
+	-ms-transform: translateX(80px);
+	transform: translateX(80px);  /* navigation links */
+}
+#menu-nav-wrap.menu-is-open {
+	-webkit-transform: translateX(0);
+	-ms-transform: translateX(0);
+	transform: translateX(0);
+
+	visibility: visible;
+
+	-webkit-transition: -webkit-transform .4s 0s, visibility 0s 0s;
+	-moz-transition: -moz-transform .4s 0s, visibility 0s 0s;
+	transition: transform .4s 0s, visibility 0s 0s;
+	-webkit-overflow-scrolling: touch;
+}
+#menu-nav-wrap h5 {
+	margin-bottom: 1.5rem;
+	font-family: "roboto-black", sans-serif;
+	font-size: 1.25rem;
+	line-height: 1.85;
+	letter-spacing: .2rem;
+}
+#menu-nav-wrap .nav-list {
+	margin: 1.8rem 0 0 0;
+	padding: 0 0 3rem 0;
+	list-style: none;
+	line-height: 4.2rem;
+}
+#menu-nav-wrap .nav-list li {
+	padding-left: 0;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+}
+#menu-nav-wrap .nav-list li:first-child {
+	border-top: 1px solid rgba(255, 255, 255, 0.03);
+}
+#menu-nav-wrap .nav-list li a {
+	color: rgba(255, 255, 255, 0.3);
+}
+#menu-nav-wrap .nav-list li a:hover,
+#menu-nav-wrap .nav-list li a:focus {
+	color: white;
+}
+
+
+/** 
+ * ===================================================================
+ * 08. main-404-content - (_layout.scss)
+ *
+ * ------------------------------------------------------------------- 
+ */
+
+#main-404-content {
+	background: #151515;
+	width: 100%;
+	height: 100%;
+	min-height: 720px;
+	z-index: 600;
+	position: relative;
+
+	-webkit-transform: translateZ(0);
+	-webkit-backface-visibility: hidden;
+
+	-moz-transition: transform 0.4s ease-in-out;
+	-o-transition: transform 0.4s ease-in-out;
+	-webkit-transition: transform 0.4s ease-in-out;
+	-ms-transition: transform 0.4s ease-in-out;
+	transition: transform 0.4s ease-in-out;
+}
+#main-404-content.menu-is-open {
+	-webkit-transform: translateX(-260px);
+	-ms-transform: translateX(-260px);
+	transform: translateX(-260px);
+}
+
+/* static background */
+#main-404-content.main-content-static {
+	background-image: url(../images/slides/greens.jpg);
+	background-repeat: no-repeat;
+	background-position: center;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	background-size: cover;
+}
+
+/* slideshow background */
+#main-404-content.main-content-slides {
+	height: 100% !important;
+}
+
+/* particle background */
+#main-404-content.main-content-particle-js {
+	background: #020507;
+	overflow: hidden;
+}
+#main-404-content.main-content-particle-js .pg-canvas {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100% !important;
+	width: 100% !important;
+	opacity: .15;
+}
+#main-404-content.main-content-particle-js .shadow-overlay {
+	display: none;
+}
+
+
+.content-wrap {
+	width: 100%;
+	height: 100%;
+	display: table;
+	position: relative;
+}
+.shadow-overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	opacity: .9;
+
+	background: -moz-linear-gradient(left, black 0%, black 20%, transparent 100%);  /* FF3.6-15 */
+	background: -webkit-linear-gradient(left, black 0%, black 20%, transparent 100%);  /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to right, black 0%, black 20%, transparent 100%);  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#000000', endColorstr='#00000000', GradientType=1);  /* IE6-9 */
+}
+.main-content {
+	display: table-cell;
+	vertical-align: middle;
+	position: relative;
+	z-index: 700;  
+}
+.main-content h1 {
+	font-family: "roboto-black", sans-serif;
+	text-transform: uppercase;
+	letter-spacing: -.2rem;
+	font-size: 9.4rem;
+	line-height: 1;
+	margin-bottom: 1.2rem;
+	padding-top: 2.4rem;
+	position: relative;
+}
+.main-content h1::before {
+	content: "";
+	display: block;
+	background: #c25d02;
+	width: 120px;
+	height: 3px;
+	position: absolute;
+	top: 0;
+	left: 9px;
+}
+
+
+/* CSS styles for kerning. See lettering.js website for details:
+ * https://github.com/davatron5000/Lettering.js
+ * if you dont want to apply kerning, just remove the "kern-this" class
+ * on the h1 tag in the html file.
+ */
+
+.main-content .kern-this  {
+	padding-top: 0px;
+}
+.main-content .char3 {
+	left: -0.01em;    /* "4" */
+}
+.main-content .char7 {
+	left: -0.013em; 	/* "R" */
+}
+.main-content .char8 {
+	left: -0.04em;    /* "O" */
+}
+.main-content .char9 {
+	left: -0.052em;   /* "R" */
+}
+.main-content .char10 {
+	left: -0.038em;   /* "." */
+}
+
+
+.main-content p {
+	color: rgba(255, 255, 255, 0.3);
+	font-family: "roboto-regular", sans-serif;
+	font-size: 1.8rem;
+	max-width: 380px;
+	text-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
+}
+.main-content .search form {
+	max-width: 360px;
+	margin: 3rem 0 1.2rem;
+}
+.main-content .search form input[type="text"] {
+	background: rgba(255, 255, 255, 0.1);
+	width: 100%;
+}
+#main-404-content footer {
+	position: absolute;
+	width: 100%;
+	min-height: 12rem;
+	bottom: 0;
+	left: 0;
+	z-index: 700;
+}
+
+/* social links */
+#main-404-content .social-links {
+	text-align: right;
+	margin-bottom: 3rem;
+}
+#main-404-content .social-links ul {
+	display: block;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	font-size: 3rem;
+}
+#main-404-content .social-links ul li {
+	display: inline-block;
+	padding: 0 .9rem;
+}
+#main-404-content .social-links ul li:last-child {
+	padding-right: 0;
+}
+
+/* bottom links */
+#main-404-content .bottom-links .links {
+	display: block;
+	list-style: none;
+	margin: 0 0 .9rem 0;
+	padding: 0;
+	font-family: "roboto-bold", sans-serif;
+	font-size: 1.7rem;
+}
+#main-404-content .bottom-links .links:before,
+#main-404-content .bottom-links .links:after {
+	content: "";
+	display: table;
+}
+#main-404-content .bottom-links .links:after {
+	clear: both;
+}
+#main-404-content .bottom-links li {
+	float: left;
+	padding: 0 1.2rem;
+}
+#main-404-content .bottom-links li:first-child {
+	padding-left: 0;
+}
+#main-404-content .bottom-links .credits {
+	font-size: 1.4rem;
+	line-height: 3rem;
+	color: rgba(255, 255, 255, 0.2);
+}
+#main-404-content .bottom-links .credits a {
+	color: rgba(255, 255, 255, 0.2);
+	display: inline-block;
+	border-bottom: 1px dotted rgba(255, 255, 255, 0.1);
+}
+#main-404-content .bottom-links .credits a:hover,
+#main-404-content .bottom-links .credits a:focus {
+	color: #FFFFFF;
+}
+/**
+ * Lists - (_document-setup.scss)  
+ * ------------------------------------------------------------------- 
+ */
+
+ol {
+	list-style: decimal;
+}
+ul {
+	list-style: disc;
+}
+li {
+	display: list-item;
+}
+ol, ul {
+	margin-left: 1.7rem;
+}
+ul li {
+	padding-left: .4rem;
+}
+ul ul, ul ol, ol ol, ol ul {
+	margin: .6rem 0 .6rem 1.7rem;
+}
+ul.disc li {
+	display: list-item;
+	list-style: none;
+	padding: 0 0 0 .8rem;
+	position: relative;
+}
+ul.disc li::before {
+	content: "";
+	display: inline-block;
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	background: #c25d02;
+	position: absolute;
+	left: -17px;
+	top: 11px;
+	vertical-align: middle;
+}
+dt {
+	margin: 0;
+	color: #c25d02;
+}
+dd {
+	margin: 0 0 0 2rem;
+}
+
+/**
+ * Spacing - (_document-setup.scss)  
+ * ------------------------------------------------------------------- 
+ */
+
+button, .button {
+	margin-bottom: 1.2;
+}
+fieldset {
+	margin-bottom: 1.5rem;
+}
+input,
+textarea,
+select,
+pre,
+blockquote,
+figure,
+table,
+p,
+ul,
+ol,
+dl,
+form,
+.fluid-video-wrapper,
+.ss-custom-select {
+	margin-bottom: 3rem;
+}
+
+/**
+ * floated image - (_document-setups.css)  
+ * ------------------------------------------------------------------- 
+
+ */
+
+img.pull-right {
+	margin: 1.5rem 0 0 3rem;
+}
+img.pull-left {
+	margin: 1.5rem 3rem 0 0;
+}
+
+
+/** 
+ * ===================================================================
+ * 04. preloader - (_preloader-1.scss)
+ *
+ * ------------------------------------------------------------------- 
+ */
+
+#preloader {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: #050505;
+	z-index: 800;
+	height: 100%;
+	width: 100%;
+}
+.no-js #preloader, .oldie #preloader {
+	display: none;
+}
+#loader {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	width: 60px;
+	height: 60px;
+	margin: -30px 0 0 -30px;
+	padding: 0;
+}
+#loader:before {
+	content: "";
+	border-top: 11px solid rgba(255, 255, 255, 0.1);
+	border-right: 11px solid rgba(255, 255, 255, 0.1);
+	border-bottom: 11px solid rgba(255, 255, 255, 0.1);
+	border-left: 11px solid #FFFFFF;
+	-webkit-animation: load 1.1s infinite linear;
+	animation: load 1.1s infinite linear;
+	display: block;
+	border-radius: 50%;
+	width: 60px;
+	height: 60px;
+}
+@-webkit-keyframes load {
+	0% {
+		-webkit-transform: rotate(0deg);
+		transform: rotate(0deg);
+	}
+	100% {
+		-webkit-transform: rotate(360deg);
+		transform: rotate(360deg);
+	}
+}
+@keyframes load {
+	0% {
+		-webkit-transform: rotate(0deg);
+		transform: rotate(0deg);
+	}
+	100% {
+		-webkit-transform: rotate(360deg);
+		transform: rotate(360deg);
+	}
+}
+
+
+/** 
+ * ===================================================================
+ * 05. forms - (_forms.scss)
+ *
+ * ------------------------------------------------------------------- 
+ */
+
+fieldset {
+	border: none;
+}
+input[type="email"],
+input[type="number"],
+input[type="search"],
+input[type="text"],
+input[type="tel"],
+input[type="url"],
+input[type="password"],
+textarea,
+select {
+	display: block;
+	height: 6rem;
+	padding: 1.5rem 2rem;
+	border: 0;
+	outline: none;
+	vertical-align: middle;
+	color: rgba(255, 255, 255, 0.8);
+	font-family: "roboto-regular", sans-serif;
+	font-size: 1.5rem;
+	line-height: 3rem;
+	max-width: 100%;
+	background: transparent;
+	-moz-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	-webkit-transition: all 0.3s ease-in-out;
+	-ms-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+}
+.ss-custom-select {
+	position: relative;
+	padding: 0;
+}
+.ss-custom-select select {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	-ms-appearance: none;
+	-o-appearance: none;
+	appearance: none;
+	text-indent: 0.01px;
+	text-overflow: '';
+	margin: 0;
+	line-height: 3rem;
+	vertical-align: middle;
+}
+.ss-custom-select select option {
+	padding-left: 2rem;
+	padding-right: 2rem;
+}
+.ss-custom-select select::-ms-expand {
+	display: none;
+}
+.ss-custom-select::after {
+	content: '\f0d7';
+	font-family: 'FontAwesome';
+	position: absolute;
+	top: 50%;
+	right: 1.5rem;
+	margin-top: -10px;
+	bottom: auto;
+	width: 20px;
+	height: 20px;
+	line-height: 20px;
+	font-size: 18px;
+	text-align: center;
+	pointer-events: none;
+	color: #252525;
+}
+
+/* IE9 and below */
+.oldie .ss-custom-select::after {
+	display: none;
+}
+textarea {
+	min-height: 25rem;
+}
+input[type="email"]:focus,
+input[type="number"]:focus,
+input[type="search"]:focus,
+input[type="text"]:focus,
+input[type="tel"]:focus,
+input[type="url"]:focus,
+input[type="password"]:focus,
+textarea:focus,
+select:focus {
+	color: #FFFFFF;
+}
+label, legend {
+	font-family: "roboto-bold", sans-serif;
+	font-size: 1.4rem;
+	margin-bottom: .6rem;
+	color: #3b3b3b;
+	display: block;
+}
+input[type="checkbox"], input[type="radio"] {
+	display: inline;
+}
+label > .label-text {
+	display: inline-block;
+	margin-left: 1rem;
+	font-family: "roboto-regular", sans-serif;
+	line-height: inherit;
+}
+label > input[type="checkbox"], label > input[type="radio"] {
+	margin: 0;
+	position: relative;
+	top: .15rem;
+}
+
+/**
+ * Style Placeholder Text  
+ * ------------------------------------------------------------------- 
+ */
+
+::-webkit-input-placeholder {
+	color: #a1a1a1;
+}
+:-moz-placeholder {
+	color: #a1a1a1;  /* Firefox 18- */
+}
+::-moz-placeholder {
+	color: #a1a1a1;  /* Firefox 19+ */
+}
+:-ms-input-placeholder {
+	color: #a1a1a1;
+}
+.placeholder {
+	color: #a1a1a1 !important;
+}
+
+
+/** 
+ * ===================================================================
+ * 06. header styles - (_layout.scss)
+ *
+ * ------------------------------------------------------------------- 
+ */
+
+header {
+	width: 100%;
+	height: auto;
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 700;
+	background: transparent;
+
+	-moz-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	-webkit-transition: all 0.3s ease-in-out;
+	-ms-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+
+	-webkit-transform: translateZ(0);
+	-webkit-backface-visibility: hidden;
+
+	-moz-transition: transform 0.4s ease-in-out;
+	-o-transition: transform 0.4s ease-in-out;
+	-webkit-transition: transform 0.4s ease-in-out;
+	-ms-transition: transform 0.4s ease-in-out;
+	transition: transform 0.4s ease-in-out;
+}
+header .row {
+	height: auto;
+	position: relative;
+}
+header.menu-is-open {
+	-webkit-transform: translateX(-260px);
+	-ms-transform: translateX(-260px);
+	transform: translateX(-260px);
+}
+
+/** 
+ * header logo - (_layout.css) 
+ * ------------------------------------------------------------------- 
+ */
+
+header .logo {
+	position: absolute;
+	left: 26px;
+	top: 0;
+	margin-top: 78px;
+}
+header .logo a {
+	display: block;
+	margin: 0;
+	padding: 0;
+	outline: 0;
+	border: none;
+	width: 282px;
+	height: 72px;
+	background: url("../images/main-logo.png") no-repeat center;
+	background-size: 282px 72px;
+
+	font: 0/0 a;
+	text-shadow: none;
+	color: transparent;
+
+	-moz-transition: all 0.5s ease-in-out;
+	-o-transition: all 0.5s ease-in-out;
+	-webkit-transition: all 0.5s ease-in-out;
+	-ms-transition: all 0.5s ease-in-out;
+	transition: all 0.5s ease-in-out;
+}
+
+/**
+ * menu toggle - (_layout.css)
+ * ------------------------------------------------------------------- 
+ */
+.menu-toggle {
+	float: right;
+	width: 40px;
+	height: 40px;
+	margin-right: 20px;
+	margin-top: 20px;
+	display: block;
+	outline: 0;
+	position: relative;
+}
+.menu-toggle span {
+	display: block;
+	background-color: #FFFFFF;
+	width: 24px;
+	height: 3px;
+	margin-top: -1.5px;
+	font: 0/0 a;
+	text-shadow: none;
+	color: transparent;
+	position: absolute;
+	right: 8px;
+	top: 50%;
+	bottom: auto;
+	left: auto;
+
+	-moz-transition: background 0.2s ease-in-out;
+	-o-transition: background 0.2s ease-in-out;
+	-webkit-transition: background 0.2s ease-in-out;
+	-ms-transition: background 0.2s ease-in-out;
+	transition: background 0.2s ease-in-out;
+}
+.menu-toggle span::before, .menu-toggle span::after {
+	content: '';
+	width: 100%;
+	height: 100%;
+	background-color: inherit;
+	position: absolute;
+	left: 0;
+
+	-moz-transition-duration: 0.2s, 0.2s;
+	-o-transition-duration: 0.2s, 0.2s;
+	-webkit-transition-duration: 0.2s, 0.2s;
+	-ms-transition-duration: 0.2s, 0.2s;
+	transition-duration: 0.2s, 0.2s;
+
+	-moz-transition-delay: 0.2s, 0s;
+	-o-transition-delay: 0.2s, 0s;
+	-webkit-transition-delay: 0.2s, 0s;
+	-ms-transition-delay: 0.2s, 0s;
+	transition-delay: 0.2s, 0s;
+}
+.menu-toggle span::before {
+	top: -8px;
+	-moz-transition-property: top, transform;
+	-o-transition-property: top, transform;
+	-webkit-transition-property: top, transform;
+	-ms-transition-property: top, transform;
+	transition-property: top, transform;
+}
+.menu-toggle span::after {
+	bottom: -8px;
+	-moz-transition-property: bottom, transform;
+	-o-transition-property: bottom, transform;
+	-webkit-transition-property: bottom, transform;
+	-ms-transition-property: bottom, transform;
+	transition-property: bottom, transform;
+}
+
+/* is clicked */
+.menu-toggle.is-clicked span {
+	background-color: rgba(255, 255, 255, 0);
+}
+.menu-toggle.is-clicked span::before, 
+.menu-toggle.is-clicked span::after {
+	background-color: white;
+	-moz-transition-delay: 0s, 0.2s;
+	-o-transition-delay: 0s, 0.2s;
+	-webkit-transition-delay: 0s, 0.2s;
+	-ms-transition-delay: 0s, 0.2s;
+	transition-delay: 0s, 0.2s;
+}
+.menu-toggle.is-clicked span::before {
+	top: 0;
+	-webkit-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	transform: rotate(45deg);
+}
+.menu-toggle.is-clicked span::after {
+	bottom: 0;
+	-webkit-transform: rotate(-45deg);
+	-ms-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+}
+
+/**
+ * responsive - header section
+ * ------------------------------------------------------------------- 
+ */
+
+@media only screen and (max-width:1024px) {
+	header .logo {
+		left: 24px;
+		margin-top: 60px;
+	}
+	header .logo a {
+		width: 247px;
+		height: 63px;
+		background-size: 247px 63px;
+	}
+}
+@media only screen and (max-width:768px) {
+	header .logo {
+		left: 51px;
+		margin-top: 48px;
+	}
+	header .logo a {
+		width: 235px;
+		height: 60px;
+		background-size: 235px 60px;
+	}
+}
+@media only screen and (max-width:600px) {
+	header .logo {
+		left: 41px;
+	}
+	header .logo a {
+		width: 212px;
+		height: 54px;
+		background-size: 212px 54px;
+	}
+}
+@media only screen and (max-width:400px) {
+	header .logo {
+		left: 28px;
+		margin-top: 19px;
+	}
+	header .logo a {
+		width: 165px;
+		height: 42px;
+		background-size: 165px 42px;
+	}
+}
+
+
+/** 
+ * =====
+/**
+ * responsive - main-404-content
+ * ------------------------------------------------------------------- 
+ */
+ 
+@media only screen and (max-width:1024px) {
+	.main-content h1 {
+		font-size: 8.6rem;
+	}
+}
+@media only screen and (max-width:768px) {
+	.main-content h1 {
+		font-size: 7.2rem;
+	}
+	#main-404-content .social-links {
+		text-align: left;
+	}
+	#main-404-content .social-links ul {
+		font-size: 2.8rem;
+	}
+	#main-404-content .social-links li:first-child {
+		padding-left: 0;
+	}
+	#main-404-content .bottom-links .links {
+		font-size: 1.6rem;
+	}
+}
+@media only screen and (max-width:600px) {
+	.main-content h1 {
+		font-size: 6.2rem;
+	}
+}
+@media only screen and (max-width:400px) {
+	.main-content h1 {
+		font-size: 5.5rem;
+	}
+	#main-404-content .social-links ul {
+		font-size: 2.6rem;
+	}
+}
+@media only screen and (max-width:380px) {
+	.main-content h1 {
+		font-size: 5.2rem;
+	}
+}
+
+/*# sourceMappingURL=main.css.map */
