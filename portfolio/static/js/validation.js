@@ -19,7 +19,7 @@ $(function() {
         required: true,
         regex: /(?:[A-Z].*[0-9])|(?:[0-9].*[A-Z])/
       },
-      first_name: "required",
+      firstname: "required",
       email_address: {
         required: true,
         // Specify that email should be validated
