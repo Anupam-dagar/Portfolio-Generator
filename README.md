@@ -1,5 +1,5 @@
 # Portfolio-Generator
-A webapp made in Django to generate a portfolio  
+A webapp made in Django to generate a portfolio.  
 # Generate your portfolio in 3 easy steps:
 1. Login or signup
 2. Enter required details.
