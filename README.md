@@ -2,6 +2,9 @@
 A webapp made in Django to generate a portfolio.  
 
 A sample portfolio built using hoxnox can be seen at [https://hoxnox.herokuapp.com/AnupamDagar/26/](http://hoxnox.herokuapp.com/AnupamDagar/26/)
+
+## Please note that currently only Google oauth is working on the hosted app at [https://hoxnox.herokuapp.com](https://hoxnox.herokuapp.com)
+
 # Generate your portfolio in 3 easy steps:
 1. Login or signup
 2. Enter required details.
@@ -16,6 +19,6 @@ Always use virtual environment
 4. After installing the dependencies, in the terminal run  ```python manage.py makemigrations```
 5. After that run ``` python manage.py migrate``` to apply the migartions.
 6. To run the server type ```python manage.py runserver```.
-7. The server will start running on port 9000 of your localhost.
+7. The server will start running on port 8000 of your localhost.
 8. To create an admin account type ```python manage.py createsuperuser``` in the terminal and fill in the details.
 9. Now you can login using those credentials
