@@ -2,7 +2,7 @@ appdirs==1.4.3
 certifi==2017.4.17
 chardet==3.0.4
 dj-database-url==0.4.2
-Django==1.11.1
+Django==1.11.29
 django-analytical==2.2.2
 django-registration==2.2
 django-widget-tweaks==1.4.1
